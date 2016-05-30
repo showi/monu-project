@@ -1,25 +1,16 @@
 # -*- coding: utf-8 -*-
 import os
 import re
-import dateutil.parser
 from datetime import datetime
 import uuid
-import json
 import flask
 from flask_restful import Resource
 from monu.conf import conf
 from monu.logger import getLogger
 from monu.srv.authentication import requires_auth
-from monu.srv.common import res2dct
 from monu.srv.argument import parser_factory
-from monu.util import hashit, pretty_dict
 from monu.mdb import common as db
 from monu import schema
-from bson.dbref import DBRef
-from bson import ObjectId, json_util
-from monu.srv.res.ingredient import Ingredient
-from monu.srv.res.recipe import Recipe
-from monu.srv.res.tag import Tag
 
 log = getLogger('res')
 
@@ -57,12 +48,6 @@ def get_schema(handle, name):
     # })
     return s
 
-
-class Schema(Resource):
-    def get(self, name=None):
-        if name is None:
-            return SCHEMA
-        return get_schema(db.open(), name)
 
 
 class Ref(Resource):

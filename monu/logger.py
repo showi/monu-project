@@ -1,12 +1,9 @@
 import os
-from os import path
 import logging  # @UnusedImport
 import logging.config
 import time
 
 from monu.conf import conf
-import monu
-
 
 def touch(path):
     with open(path, 'a'):

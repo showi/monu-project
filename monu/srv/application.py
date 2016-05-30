@@ -3,10 +3,10 @@ from flask import Flask, send_from_directory
 from flask_restful import Api
 # import flask.ext.uploads as uploads  # @UnresolvedImport @UnusedImport
 
-import monu.srv.resource as resource
+
 from monu.conf import conf
 import monu.logger
-
+from monu.srv import res as resource
 log = monu.logger.getLogger('srv.application')
 
 allowed_extensions = ('fs', )
@@ -32,8 +32,8 @@ class Application(object):
 
     def init_api(self):
         log.info('[%s] Init api', self.__class__.__name__)
-        self.api.add_resource(resource.Ref,
-                              '/api/ref/<string:collection>/<string:key>/<string:value>')
+       # self.api.add_resource(resource.Ref,
+       #                       '/api/ref/<string:collection>/<string:key>/<string:value>')
         self.api.add_resource(resource.Tag,
                               '/api/tag',
                               '/api/tag/<string:key>/<string:value>')
