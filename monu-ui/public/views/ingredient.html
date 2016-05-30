@@ -1,0 +1,12 @@
+<div class="row">
+  <ul class="" style="list-style: hebrew">
+    <li ng-repeat="doc in ingredient.data">
+      <span class="col-sm-4">{{doc.name}}</span>
+      <span class="col-sm-4"><a ng-repeat="tag in doc.tag" ng-href="#/tag/view/_id/{{tag._id}}"><span
+        class="label label-pill label-info">{{tag.name}}</span></a></span>
+    <span class="hide col-sm-4">
+      <a class="btn btn-md bnt-info" ng-href='#/ingredient/edit/_id/{{doc._id}}'>edit</a>
+    </span>
+    </li>
+  </ul>
+</div>

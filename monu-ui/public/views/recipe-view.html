@@ -1,0 +1,42 @@
+<div ng-repeat="doc in recipe.data" class="container-fluid">
+  <div class="row">
+            <span class="col-sm-8" style="text-transform: capitalize;">
+              <a ng-href="#/recipe/view/_id/{{doc._id}}">{{doc.name}}</a>
+            </span>
+            <span class="col-sm-4">
+                <a class="hide btn btn-md bnt-info" ng-href='#/recipe/edit/_id/{{doc._id}}'>edit</a>
+            </span>
+  </div>
+  <div>
+    <div class="col-sm-12">
+      <span ng-repeat="tag in doc.tag track by $index" class="label"><a ng-href="#/tag/view/_id/{{tag._id}}">{{tag.name}}</a></span>
+    </div>
+    <div class="col-sm-12">
+      <ul style="display: inline-block;list-style: lower-greek">
+        <li ng-repeat="ingredient in doc.ingredient track by $index">
+          <span style="font-size: small; font-style: italic; font-weight: bold;">{{ingredient.name}}</span>
+          &nbsp;<span style="font-size: small">{{ingredient.quantity}}&nbsp<span style="font-style: italic">{{ingredient.mesure}}</span></span>
+        </li>
+      </ul>
+      <div ng-if="doc.child_recipe !== undefined">
+        <span style="font-size: small">Recette liée</span>
+        <ul>
+          <li ng-repeat="recipe in doc.child_recipe">
+            <div ng-controller="RecipeCtrl as rc" ng-include="views/recipe-view.html">
+
+            </div>
+            <a ng-href="#/recipe/view/_id/{{recipe._id}}">{{recipe.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <ul>
+        <li ng-repeat="step in doc.step track by $index">
+          <span
+            style="font-size: small; font-style: oblique; font-weight: bold; text-decoration: dashed">{{step.title}}</span>
+          &nbsp;<span style="font-size: x-small">({{step.duration}}s)</span>
+          <p>{{step.text}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

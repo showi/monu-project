@@ -1,0 +1,64 @@
+{
+  "_id": null,
+  "type": "recipe",
+  "name": "salade des deux terres",
+  "lang": "fr_fr",
+  "ingredient": [
+    {
+      "name": "betterave rouge",
+      "quantity": 0.5,
+      "mesure": "pc"
+    },
+    {
+      "name": "tomate",
+      "quantity": 3,
+      "mesure": "pc"
+    },
+    {
+      "name": "persil",
+      "quantity": 3,
+      "mesure": "brin"
+    },
+    {
+      "name": "concombre",
+      "quantity": 0.5,
+      "mesure": "pc"
+    },
+    {
+      "name": "huile de tournesol",
+      "quantity": 3,
+      "mesure": "cs"
+    },
+    {
+      "name": "vinaigre de noix",
+      "quantity": 1,
+      "mesure": "cs"
+    },
+    {
+      "name": "moutarde",
+      "quantity": 1,
+      "mesure": "c"
+    },
+    {
+      "name": "sel",
+      "quantity": 1,
+      "mesure": "g"
+    }
+  ],
+  "tag": [
+    "salade",
+    "entrée"
+  ],
+  "step": [
+    {
+      "title": "Tout couper bien sur",
+      "text": "Détailler les légumes en cube de taille moyenne, ciseler le persil",
+      "duration": 500
+    },
+    {
+      "title": "Sauce moutarde",
+      "text": "Faire fondre le sel dans le vinaigre, ajouter la moutarde ",
+      "duration": 500
+    }
+  ]
+}

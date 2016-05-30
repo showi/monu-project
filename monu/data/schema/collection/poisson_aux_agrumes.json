@@ -1,0 +1,59 @@
+{
+  "_id": null,
+  "type": "recipe",
+  "name": "poisson aux agrumes",
+  "lang": "fr_fr",
+  "ingredient": [
+    {
+      "name": "beurre",
+      "quantity": 50,
+      "mesure": "g"
+    },
+    {
+      "name": "citron vert",
+      "quantity": 1,
+      "mesure": "pc"
+    },
+    {
+      "name": "citron jaune",
+      "quantity": 1,
+      "mesure": "pc"
+    },
+    {
+      "name": "échalote",
+      "quantity": 1,
+      "mesure": "pc"
+    }
+  ],
+  "tag": [
+    "salade",
+    "entrée"
+  ],
+  "step": [
+    {
+      "title": "Ca chauffe",
+      "text": "Faire fondre 1/4 du beurre dans une petite casserolle à feu dou",
+      "duration": 120
+    },
+    {
+      "title": "Emincer",
+      "text": "Emincer l'échalotte en petit dés. et ajouter dans la casserolle contenant le beurre fondu.",
+      "duration": 120
+    },
+    {
+      "title": "Zest et jus de citron",
+      "text": "Récupérér du zest sur chaque citron et réserver. Presser les deux citrons et réserver.",
+      "duration": 120
+    },
+    {
+      "title": "Coloration",
+      "text": "Quand les échalottes on fondue sans coloration ajouté le jus de citron. Ajouter le restant de beurre et battre afin d'homogénéiser. Salé,poivré, rectifer",
+      "duration": 600
+    },
+    {
+      "title": "Servir",
+      "text": "Servir chaud sur le poisson venant d'être cuit, décorer avec vos zestes de citron",
+      "duration": 600
+    }
+  ]
+}

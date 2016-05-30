@@ -1,0 +1,22 @@
+#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
+
+import pprint
+from monu.srv.startup import on_start
+on_start()
+
+from monu.srv.application import application
+from monu.conf import conf
+from monu.logger import getLogger
+
+
+log = getLogger('MonuHTTPD')
+
+debug = conf.getboolean('debug', 'active')
+host = conf.get('backend', 'host')
+port = conf.getint('backend', 'port')
+
+if debug:
+    log.info('Conf:\n%s', pprint.pformat(conf.dump(), depth=3))
+    log.info('starting %s:%s' % (host, port))
+application.run(debug=debug, host=host, port=port)

@@ -1,0 +1,81 @@
+{
+  "_id": null,
+  "type": "recipe",
+  "name": "tarte au pommes",
+  "lang": "fr_fr",
+  "level": "moyen",
+  "tag": ["dessert", "pomme", "tarte", "compote"],
+  "child": [
+    {
+      "type": "recipe",
+      "name": "compote de pomme sèche",
+      "child_position": 0,
+      "lang": "fr_fr",
+      "level": "facile",
+      "ingredient": [
+        {
+          "name": "rhum blanc",
+          "quantity": 1,
+          "mesure": "cas"
+        },
+        {
+          "name": "sucre",
+          "quantity": 25,
+          "mesure": "g"
+        },
+        {
+          "name": "pomme",
+          "quantity": 4,
+          "mesure": "pc"
+        },
+        {
+          "name": "citron",
+          "quantity": 0.5,
+          "mesure": "pc"
+        }
+      ],
+      "tag": [
+        "dessert",
+        "pomme",
+        "rhum"
+      ],
+      "step": [
+        {
+          "title": "Peler et couper les pommes",
+          "text": "Peler et couper les pommes en 8",
+          "duration": 180
+        },
+        {
+          "title": "De l'énergie",
+          "text": "Mettre les pommes dans une casserolle à feux moyen, ajouter le sucre et mouiller avec un peu d'eau",
+          "duration": 300
+        },
+        {
+          "title": "Couvrir et attendre",
+          "text": "Mettre un couvercle sur la casserolle et laisser cuire à feu moyen",
+          "duration": 600
+        },
+        {
+          "title": "Jus de citron",
+          "text": "Presser le jus d'un demi citron",
+          "duration": 600
+        },
+        {
+          "title": "Le presse purée",
+          "text": "Passer vos pommes au presse purée, si les pommes ne sont pas assé tendre continuer la cuisson",
+          "duration": 600
+        },
+        {
+          "title": "Le presse purée",
+          "text": "Passer vos pommes au presse purée, si les pommes ne sont pas assé tendre continuer la cuisson",
+          "duration": 600
+        },
+        {
+          "title": "Final",
+          "text": "Ajouter le jus de citron puis brasser. Laisser s'évaporer l'exédent d'eau en ne couvrant pas. Laisser refroidir et mettre ou réfrigérateur ou manger tiède",
+          "duration": 600
+        }
+      ]
+    }
+  ]
+}

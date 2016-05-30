@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db:
+    image: mongo 
+  web:
+    build: .
+    command: sh start.sh
+    volumes:
+      - .:/code
+    ports:
+      - "5080:5000"
+    depends_on:
+      - db
+

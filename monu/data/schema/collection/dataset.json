@@ -1,0 +1,29 @@
+[
+  {
+    "_id": null,
+    "type": "ingredient",
+    "name": "citron",
+    "tag": [
+      "agrume"
+    ],
+    "lang": "fr_fr"
+  },
+  {
+    "_id": null,
+    "type": "ingredient",
+    "name": "citron vert",
+    "tag": [
+      "agrume"
+    ],
+    "lang": "fr_fr"
+  },
+  {
+    "_id": null,
+    "type": "ingredient",
+    "name": "citron jaune",
+    "tag": [
+      "agrume"
+    ],
+    "lang": "fr_fr"
+  }
+]

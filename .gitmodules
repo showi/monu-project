@@ -1,0 +1,6 @@
+[submodule "monu-ui"]
+	path = monu-ui
+	url = git@github.com:showi/monu-ui.git
+[submodule "monu"]
+	path = monu
+	url = git@github.com:showi/monu.git

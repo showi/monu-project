@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sys
+import argparse
+from os import path
+from werkzeug.serving import make_ssl_devcert
+import monu
+
+try:
+    import OpenSSL  # @UnusedImport
+except ImportError:
+    print('Error: Python OpenSSL must be installed (ex: pip install pyOpenSSL')
+    sys.exit(1)
+
+"""Default
+"""
+default_path = path.join(monu.base_path, 'monu', 'data', 'cert', 'server')
+default_host = 'localhost'
+
+"""Arguments parser
+"""
+parser = argparse.ArgumentParser(description='Generate SSL certificate')
+parser.add_argument('--path',  dest="path",
+                    help='certificate path', default=default_path)
+parser.add_argument('--host', dest='host', default=default_host,
+                   help='host')
+
+args = parser.parse_args()
+
+"""Generate certificate
+"""
+dst_dir = path.dirname(args.path)
+if not path.exists(dst_dir):
+    print('Error: Destination directory does not exists: %s' % dst_dir)
+    sys.exit(2)
+dstfn = path.basename(args.path)
+print('Creating SSL certificate for `%s` in %s' % (args.host, args.path))
+make_ssl_devcert(args.path, host=args.host)
+for ext in ['key', 'crt']:
+    print ('- %s.%s' % (path.join(dst_dir, dstfn), ext))

@@ -1,0 +1,80 @@
+{
+  "_id": null,
+  "type": "recipe",
+  "name": "fondue savoyarde",
+  "lang": "fr_fr",
+  "ingredient": [
+    {
+      "name": "emmental",
+      "quantity": 350,
+      "mesure": "g"
+    },
+    {
+      "name": "beaufort",
+      "quantity": 200,
+      "mesure": "g"
+    },
+    {
+      "name": "comte",
+      "quantity": 350,
+      "mesure": "g"
+    },
+    {
+      "name": "vin blanc sec",
+      "quantity": 50,
+      "mesure": "cl"
+    },
+    {
+      "name": "ail",
+      "quantity": 1,
+      "mesure": "os"
+    },
+    {
+      "name": "sel",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "poivre",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "noix de muscade",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "kirsch",
+      "quantity": 2,
+      "mesure": "os"
+    }
+  ],
+  "tag": [
+    "plat",
+    "fromage",
+    "savoie"
+  ],
+  "step": [
+    {
+      "title": "Ca rape!",
+      "text": " Raper le fromage, l'utilisation d'un robot est conseillée.",
+      "duration": 500
+    },
+    {
+      "title": "Parfumer le caquelon",
+      "text": " Eplucher l'ail et frotter le caquelon avec.",
+      "duration": 60
+    },
+    {
+      "title": "Frisoti frisota",
+      "text": "Verser un verre de vin blanc dans le caquelon, mettre le feu assé fort et attendre que ça frise (petite bulle).",
+      "duration": 60
+    },
+    {
+      "title": "De la poigne",
+      "text": "Verser le fromage rapé sans arrêtté de tourner avec une grande spatule (en bois). La consistance doit devenir souple et homogène. En fonction de vrotre gout allongé au vin blanc",
+      "duration": 60
+    }
+  ]
+}
