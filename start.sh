@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 export PYTHONPATH="."
-mkdir /tmp/monu
+mkdir -p /tmp/monu
+/etc/init.d/mongodb start
 python monu/mdb/install_data.py
-#python monu/db.py
 python httpd
