@@ -7,4 +7,4 @@ WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt 
 ADD . /code/
-CMD sh start.sh
+CMD sh docker_start.sh
