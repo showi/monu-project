@@ -9,7 +9,7 @@ import monu.logger
 
 log = monu.logger.getLogger('srv.application')
 
-allowed_extensions = ('fs')
+allowed_extensions = ('fs', )
 
 
 class Application(object):

@@ -68,7 +68,7 @@ def hashit_fs(fh, kind='sha256', fmt='hexdigest'):
         size += len(chunk)
         m.update(chunk)
     fh.seek(offset)
-    return (getattr(m, fmt)(), size)
+    return getattr(m, fmt)(), size
 
 
 def get_upload_path(name):

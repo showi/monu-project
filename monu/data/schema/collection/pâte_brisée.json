@@ -1,0 +1,45 @@
+{
+  "_id": null,
+  "type": "recipe",
+  "name": "pâte brisée",
+  "lang": "fr_fr",
+  "ingredient": [
+    {
+      "name": "beurre",
+      "quantity": 150,
+      "mesure": "g"
+    },
+    {
+      "name": "farine",
+      "quantity": 300,
+      "mesure": "g"
+    },
+    {
+      "name": "eau",
+      "quantity": 5,
+      "mesure": "cl"
+    }
+  ],
+  "tag": [
+    "tarte",
+    "dessert",
+    "citron"
+  ],
+  "step": [
+    {
+      "title": "Passer la pomade",
+      "text": "Le beurre doit avoir été sortie en avance ou être passé rapidement au micro onde. Il ne doit pas être froid ni liquide.",
+      "duration": 30
+    },
+    {
+      "title": "De la semoule?",
+      "text": "Dans un saladier verse la farine, ajouter le beurre en morceau et mélanger du bout des doigts jusqu'à l'obtention d'une serote de 'semoule'.",
+      "duration": 30
+    },
+    {
+      "title": "De l'eau de l'air...",
+      "text": "Ajouter juste ce qu'il faut d'eau afin de transformer le mélange en pâte, pétrir jusqu'à ce que ça soit homogène.",
+      "duration": 30
+    }
+  ]
+}

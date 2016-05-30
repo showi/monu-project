@@ -5,16 +5,6 @@
   "lang": "fr_fr",
   "ingredient": [
     {
-      "name": "beurre",
-      "quantity": 150,
-      "mesure": "g"
-    },
-    {
-      "name": "farine",
-      "quantity": 300,
-      "mesure": "g"
-    },
-    {
       "name": "vanille",
       "quantity": 1,
       "mesure": "gousse"
@@ -28,6 +18,13 @@
       "name": "lait",
       "quantity": 0.5,
       "mesure": "L"
+    }
+  ],
+  "child": [
+    {
+      "_id": null,
+      "ref": "recipe",
+      "name": "pâte brisée"
     }
   ],
   "tag": [

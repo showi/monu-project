@@ -1,20 +1,12 @@
 # -*- coding: utf-8 -*-
-import os
-import re
-import dateutil.parser
-from datetime import datetime
-import uuid
-import json
+
 import flask
 from flask_restful import Resource
 from bson import ObjectId, json_util
 
-from monu.conf import conf
-from monu.logger import getLogger
 from monu.srv.authentication import requires_auth
 from monu.mdb import common as db
 from monu.logger import getLogger
-from monu.srv.res._common import digestify
 
 log = getLogger('src.res.tag')
 

@@ -2,7 +2,7 @@ from bson.code import Code
 
 
 def mr_tag(db, collection):
-    map = Code('function () {'
+    m = Code('function () {'
                '   if (this.tag === undefined) {'
                '       return;'
                '   }'
@@ -10,11 +10,11 @@ def mr_tag(db, collection):
                '       emit(z, 1);'
                '   });'
                '}')
-    reduce = Code('function(key, values) {'
+    r = Code('function(key, values) {'
                   ' var total = 0;'
                   ' for(var i = 0; i < values.length; i++) {'
                   '     total += values[i];'
                   ' }'
                   ' return total;'
                   '}')
-    return db[collection].map_reduce(map, reduce, 'result-' + collection)
+    return db[collection].map_reduce(m, r, 'result-' + collection)
