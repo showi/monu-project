@@ -54,11 +54,62 @@
       "title": "Tout couper bien sur",
       "text": "Détailler les légumes en cube de taille moyenne, ciseler le persil",
       "duration": 500
-    },
+    }
+  ],
+  "child": [
     {
-      "title": "Sauce moutarde",
-      "text": "Faire fondre le sel dans le vinaigre, ajouter la moutarde ",
-      "duration": 500
+      "type": "recipe",
+      "name": "sauce moutarde",
+      "tag": [
+        "sauce",
+        "moutarde",
+        "huile",
+        "vinaigre"
+      ],
+      "ingredient": [
+        {
+          "name": "huile",
+          "quantity": 3,
+          "mesure": "cs"
+        },
+        {
+          "name": "vinaigre",
+          "quantity": 1,
+          "mesure": "cs"
+        },
+        {
+          "name": "moutarde",
+          "quantity": 1,
+          "mesure": "c"
+        },
+        {
+          "name": "sel",
+          "quantity": "0.1",
+          "mesure": "g"
+        },
+        {
+          "name": "poivre",
+          "quantity": "0.1",
+          "mesure": "g"
+        }
+      ],
+      "step": [
+        {
+          "title": "Fondue de sel",
+          "text": "Faire fondre le sel dans le vinaigre, ajouter la moutarde.",
+          "duration": 30
+        },
+               {
+          "title": "En tournant, de l'air",
+          "text": "Ajouter l'huile doucement tout en mélangeant avec une fourchette pour incorporer de l'air",
+          "duration": 500
+        },
+        {
+          "title": "Goûter, rectifier",
+          "text": "Salé, poivrer",
+          "duration": 500
+        }
+      ]
     }
   ]
 }
