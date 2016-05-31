@@ -16,7 +16,6 @@ angular.module('monoApp')
 
     Ctl.get = function(url) {
       Ingredient.get(url).then(function(response) {
-        console.log(response);
         if (response.status !== 200) {
           console.error('Cannot get ingredient: %s (%s)', response.status_text, response.config.url);
         }

@@ -5,16 +5,7 @@ from datetime import datetime
 
 log = getLogger(__name__)
 
-__MIME_IMAGE__ = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif',
-                  'image/x-icon', 'image/vnd.microsoft.icon',
-                  'image/vnd.djvu ', 'image/svg+xml']
-__SAFE_PROPERTY__ = ['id', 'computername', 'username', 'client_id', 'command',
-                     'created_on', 'response', 'platform', 'type',
-                     'respond_on',
-                     'action', 'type', 'hint', 'status', 'updated_on', 'error',
-                     'error_code', 'text', 'key', 'value']
 __FORMAT_GMT__ = '%a, %d %b %Y %H:%M:%S GMT'
-__INTENTS__ = ['meta', 'download', 'thumbnail', 'stream']
 
 
 def sgetattr(resource, name):

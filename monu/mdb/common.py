@@ -26,8 +26,9 @@ def astrid(data):
 
 
 def deref(collection, _id):
-    log.info('DeRef %s', _id)
-    result = collection.find_one({'_id': _id})
+    #result = collection.find_one({'_id': _id})
+    result = find_one(collection, {'_id': _id})
+    log.info('dereference: %s', _id)
     return result
 
 
@@ -51,7 +52,7 @@ def preload_collection(db):
         log.info('> Loading json %s %s', path, fn)
         js = load_json(os.path.join(path, fn))
         if isinstance(js, list):
-            log.info('< Skip list %s')
+            log.info('< Skip json list %s' % fn)
             continue
         if 'type' not in js or js['type'] not in VALID_COLLECTION:
             raise Error.InvalidCollection(fn)
@@ -65,6 +66,33 @@ def preload_collection(db):
         except Exception as e:
             log.error('Error: Cannot load collection: %s\n\t%s' % (fn, e))
 
+_QUERY_CACHE_ = {}
+
+def _mk_key(mode, collection, query):
+    key = u'%s/%s' % (mode, collection.name)
+    for k in sorted(query):
+        key += u'/%s/%s/' % (k,
+                             '%s' % query[k])
+    key = key[:-1]
+    return key
+
+def find(collection, query):
+    key = _mk_key(u'find', collection, query)
+    tag = "CACHE"
+    if key not in _QUERY_CACHE_:
+        tag = "MISS"
+        _QUERY_CACHE_[key] = collection.find(query)
+    log.debug('%s: %s' % (tag, key))
+    return _QUERY_CACHE_[key]
+
+def find_one(collection, query):
+    key = _mk_key(u'find_one', collection, query)
+    tag = "CACHE"
+    if key not in _QUERY_CACHE_:
+        tag = "MISS"
+        _QUERY_CACHE_[key] = collection.find_one(query)
+    log.debug('%s: %s' % (tag, key))
+    return _QUERY_CACHE_[key]
 
 def client():
     uri = u'mongodb://%s' % conf.get('db.mongo', 'host')
@@ -82,3 +110,22 @@ def open(name='monu'):
 
 def remove_all(collection):
     collection.remove({})
+
+if __name__ == '__main__':
+    from time import time
+    start_time = time()
+    part_time = start_time
+    def elapsed(msg=None):
+        global start_time, part_time
+        now = time()
+        elapsed = part_time - start_time
+        part_time = now
+        if msg is not None:
+            print('%s %s' % (elapsed, msg))
+    elapsed('start')
+    result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
+    elapsed('deux')
+    result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
+    elapsed('trois')
+    result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
+    elapsed('quatre')

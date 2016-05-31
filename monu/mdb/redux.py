@@ -18,3 +18,8 @@ def mr_tag(db, collection):
                   ' return total;'
                   '}')
     return db[collection].map_reduce(m, r, 'result-' + collection)
+
+if __name__ == '__main__':
+    import monu.mdb.common as db
+    for row in mr_tag(db, 'recipe'):
+        print row

@@ -32,23 +32,21 @@ class Recipe(Resource):
                         db.astrid(tag)
                         nt.append(tag)
                     else:
-                        log.info('Tag %s', tag)
-                        newtag = db.deref(handle.tag, tag['_id'])
-                        log.info('new tag: %s', newtag)
-                        db.astrid(newtag)
-                        nt.append(newtag)
+                        new_tag = db.deref(handle.tag, tag['_id'])
+                        db.astrid(new_tag)
+                        nt.append(new_tag)
                 doc['tag'] = nt
             if not digest and 'ingredient' in doc and doc['ingredient'] is not None:
                 ni = []
                 for ingredient in doc['ingredient']:
-                    newing = db.deref(handle.ingredient, ingredient['_id'])
-                    if newing is not None:
+                    new_ing = db.deref(handle.ingredient, ingredient['_id'])
+                    if new_ing is not None:
                         for key in ingredient:
                             if key == 'name':
                                 continue
-                            newing[key] = ingredient[key]
-                        db.astrid(newing)
-                        ni.append(newing)
+                            new_ing[key] = ingredient[key]
+                        db.astrid(new_ing)
+                        ni.append(new_ing)
                     else:
                         db.astrid(ingredient)
                         ni.append(ingredient)

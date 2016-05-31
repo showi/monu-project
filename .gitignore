@@ -5,5 +5,4 @@ monu.egg-info/
 *.pyc
 /.idea
 *.komodoproject
-.DS_Store
 *.swp

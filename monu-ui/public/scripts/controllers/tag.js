@@ -29,7 +29,6 @@ angular.module('monoApp')
     */
     Ctl._init = function () {
       var op = $route.current.$$route.originalPath;
-      console.log('originalPath', op);
       if (0 === op.indexOf('/tag/edit/:key/:value')) {
         Ctl.Schema = Schema.get('/tag');
         Ctl.StartVal = Tag.get(Util.join($route.current.params.key, $route.current.params.value)).then(function (response) {

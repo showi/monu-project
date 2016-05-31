@@ -25,14 +25,13 @@ class replace(object):
     def ingredient(cls, db, data):
         if 'ingredient' not in data or data['ingredient'] is None:
             return
-        newingredient = []
+        new_ingredient = []
         for ingredient in data['ingredient']:
             if 'name' in ingredient and isinstance(ingredient['name'], basestring):
-                newingredient.append(insert.ingredient(db, {'name': ingredient['name']}))
+                new_ingredient.append(insert.ingredient(db, {'name': ingredient['name']}))
             else:
-                newingredient.append(ingredient)
-        data['ingredient'] = newingredient
-        log.info('New ingredient %s', newingredient)
+                new_ingredient.append(ingredient)
+        data['ingredient'] = new_ingredient
 
     @classmethod
     def tag(cls, db, data):
@@ -42,9 +41,7 @@ class replace(object):
         for tag in data['tag']:
             if isinstance(tag, basestring):
                 nt = insert.tag(db, {'name': tag})
-                log.info('nt: %s', nt)
                 newtag.append(nt)
             else:
                 newtag.append(tag)
         data['tag'] = newtag
-        log.info('New tag %s' % newtag)

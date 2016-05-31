@@ -35,19 +35,6 @@ class File(Resource):
                                args.mime)  # , as_attachment, attachment_filename, add_etags, cache_timeout, conditional)
 
 
-import copy
-
-
-def get_schema(handle, name):
-    s = copy.deepcopy(schema.SCHEMA[name])
-    # if name == 'ingredient':
-    # for doc in db.find(handle.tag):
-    # s['tag']['items']['properties']['type']['enum'].append({
-    #    '_id': doc['_id'],
-    #    'name': doc['name']
-    # })
-    return s
-
 
 
 class Ref(Resource):
@@ -58,12 +45,3 @@ class Ref(Resource):
             response['doc'].append(doc)
             response['total'] += 1
         return response
-
-
-def digestify(doc, keyring=['ingredient', 'child', 'step']):
-    if 'child' in doc:
-        for child in doc['child']:
-            digestify(child, keyring)
-    for key in keyring:
-        if key in doc:
-            del doc[key]
