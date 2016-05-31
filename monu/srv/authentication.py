@@ -1,6 +1,6 @@
 from functools import wraps
 from flask import request, Response
-
+from monu.conf import conf
 
 def check_auth(username, password):
     """This function is called to check if a username /
@@ -20,9 +20,10 @@ def authenticate():
 def requires_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        auth = request.authorization
-        if not auth or not check_auth(auth.username, auth.password):
-            return authenticate()
+        if conf.getboolean('authentication', 'enable'):
+            auth = request.authorization
+            if not auth or not check_auth(auth.username, auth.password):
+                return authenticate()
         return f(*args, **kwargs)
 
     return decorated
