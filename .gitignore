@@ -1,6 +1,6 @@
 env/
 build/
-dist/
+/dist/
 monu.egg-info/
 *.pyc
 /.idea
