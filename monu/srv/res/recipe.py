@@ -19,8 +19,6 @@ class Recipe(Resource):
             value = ObjectId(value)
         response = []
         search = {}
-        # handle = mdb.open()
-
         if key is not None:
             search = {key: value}
         digest = False
@@ -35,14 +33,14 @@ class Recipe(Resource):
                             mdb.astrid(tag)
                             nt.append(tag)
                         else:
-                            new_tag = mdb.deref(handle.tag, tag['_id'])
+                            new_tag = mdb.deref(handle.tag, tag)
                             mdb.astrid(new_tag)
                             nt.append(new_tag)
                     doc['tag'] = nt
                 if not digest and 'ingredient' in doc and doc['ingredient'] is not None:
                     ni = []
                     for ingredient in doc['ingredient']:
-                        new_ing = mdb.deref(handle.ingredient, ingredient['_id'])
+                        new_ing = mdb.deref(handle.ingredient, ingredient)
                         if new_ing is not None:
                             for key in ingredient:
                                 if key == 'name':

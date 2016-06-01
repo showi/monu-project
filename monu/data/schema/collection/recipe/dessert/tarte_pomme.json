@@ -4,13 +4,20 @@
   "name": "tarte au pommes",
   "lang": "fr_fr",
   "level": "moyen",
-  "tag": ["dessert", "fruit", "tarte"],
+  "tag": [
+    "dessert",
+    "fruit",
+    "tarte"
+  ],
   "child": [
     {
       "type": "recipe",
       "name": "compote de pomme sèche",
       "child_position": 0,
-      "lang": ["fr", "fr"],
+      "lang": [
+        "fr",
+        "fr"
+      ],
       "level": "facile",
       "ingredient": [
         {
@@ -76,6 +83,11 @@
           "duration": 600
         }
       ]
+    },
+    {
+          "_id": null,
+          "ref": "recipe",
+          "name": "pâte brisée"
     }
   ]
 }

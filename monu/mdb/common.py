@@ -27,10 +27,15 @@ def astrid(data):
         data['_id'] = str(data['_id'])
     return data
 
-def deref(collection, _id):
-    # result = collection.find_one({'_id': _id})
-    result = find_one(collection, {'_id': _id})
-    log.info('dereference: %s', _id)
+
+def deref(collection, search):
+    query = {}# result = collection.find_one({'_id': _id})
+    if 'name' in search:
+        query['name'] = search['name']
+    else:
+        query['_id'] = search['_id']
+    result = find_one(collection, query)
+    log.info('dereference: %s', result)
     return result
 
 
