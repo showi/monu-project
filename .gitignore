@@ -3,6 +3,6 @@ build/
 /dist/
 monu.egg-info/
 *.pyc
-/.idea
+.idea
 *.komodoproject
 *.swp
