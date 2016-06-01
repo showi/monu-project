@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-from monu.mdb.common import preload_collection, open, remove_all
+from monu.mdb import common as mdb
 
-db = open()
-remove_all(db.tag)
-remove_all(db.ingredient)
-remove_all(db.recipe)
-preload_collection(open())
+with mdb.open() as db:
+    mdb.remove_all(db.tag)
+    mdb.remove_all(db.ingredient)
+    mdb.remove_all(db.recipe)
+    mdb.preload_collection(db)

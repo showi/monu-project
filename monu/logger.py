@@ -81,4 +81,3 @@ def getLogger(name):
 
 
 log = getLogger('monu')
-log.info('Start logging')

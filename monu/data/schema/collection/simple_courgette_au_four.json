@@ -1,0 +1,56 @@
+{
+  "name": "simple courgette au four",
+  "description": "Recette pour jour de flemme",
+  "type": "recipe",
+  "tag": [
+    "poulet",
+    "plat",
+    "four",
+    "curry"
+  ],
+  "serving": 4,
+  "oven": {
+    "temperature": 180,
+    "mesure": "celius"
+  },
+  "ingredient": [
+    {
+      "name": "courgette",
+      "quantity": 4,
+      "mesure": "pc"
+    },
+    {
+      "name": "sel",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "poivre",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "curry",
+      "quantity": 2,
+      "mesure": "g"
+    }
+  ],
+  "step": [
+    {
+      "title": "Eplucher, débiter",
+      "text": "Eplucher les courgettes. Couper en très très fines rondelles. Mettre dans un plat à gratin",
+      "duration": 180
+    },
+    {
+      "title": "Assaisonner",
+      "text": "Saler, poivrer, saupoudrer de curry. Mélanger avec les mains, plus efficace et pas désagréable",
+      "duration": 60
+    },
+    {
+      "title": "Enfourner",
+      "text": "Enfourner à 180°C, 20 à 30 mn",
+      "duration": 1200
+    }
+  ],
+  "note": "Si ça dessèche trop, ajouter un peu d'eau"
+}

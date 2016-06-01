@@ -28,20 +28,21 @@ class replace(object):
         new_ingredient = []
         for ingredient in data['ingredient']:
             if 'name' in ingredient and isinstance(ingredient['name'], basestring):
-                new_ingredient.append(insert.ingredient(db, {'name': ingredient['name']}))
-            else:
-                new_ingredient.append(ingredient)
-        data['ingredient'] = new_ingredient
+                ingredient.update(insert.ingredient(db, {'name': ingredient['name']}))
+                #ingredient.update(ni)
+                #new_ingredient.append()
+            #else:
+            #    new_ingredient.append(ingredient)
+        #data['ingredient'] = new_ingredient
 
     @classmethod
     def tag(cls, db, data):
         if 'tag' not in data or data['tag'] is None:
             return
-        newtag = []
+        new_tag = []
         for tag in data['tag']:
             if isinstance(tag, basestring):
-                nt = insert.tag(db, {'name': tag})
-                newtag.append(nt)
+                new_tag.append(insert.tag(db, {'name': tag}))
             else:
-                newtag.append(tag)
-        data['tag'] = newtag
+                new_tag.append(tag)
+        data['tag'] = new_tag

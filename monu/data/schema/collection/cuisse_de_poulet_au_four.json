@@ -1,0 +1,50 @@
+{
+  "name": "cuisse de poulet au four",
+  "description": "Recette pour jour de flemme",
+  "type": "recipe",
+  "tag": [
+    "poulet",
+    "plat",
+    "four"
+  ],
+  "serving": 4,
+  "oven": {
+    "temperature": 180,
+    "mesure": "celius"
+  },
+  "ingredient": [
+    {
+      "name": "cuisse de poulet",
+      "quantity": 4,
+      "mesure": "pc"
+    },
+    {
+      "name": "sel",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "poivre",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "herbe de provence",
+      "quantity": 2,
+      "mesure": "g"
+    }
+  ],
+  "step": [
+    {
+      "title": "La cocotte",
+      "text": "Mettre les cuisses dans une cocotte américaine. Saler, poivrer et ajouter les herbes de provence.",
+      "duration": 60
+    },
+    {
+      "title": "Enfourner",
+      "text": "Fermer et enfourner à 18O°. Vaquez à vos occupations pendant au moins 45 mn. Jeter un coup d’œil. En cas de sécheresse excessive, ajouter de l'eau.",
+      "duration": 2700
+    }
+  ],
+  "note": "Baisser la température. Passer à table quand vous voulez."
+}
