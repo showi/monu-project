@@ -24,9 +24,3 @@ def resize(in_file, out_file, height=200):
         log.critical('Error: %s', e)
         return False
     return True
-
-
-if __name__ == '__main__':
-    log.info('Test')
-    resize('../tmpy-ui/app/images/yeoman.png',
-           '../tmpy-ui/app/images/yeoman_thumb.png', height=600)

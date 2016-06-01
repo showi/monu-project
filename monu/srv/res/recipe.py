@@ -25,7 +25,6 @@ class Recipe(Resource):
         if key is None:
             digest = True
         with mdb.open() as handle:
-            log.info('search %s', search)
             for doc in mdb.find(handle.recipe, search):
                 if 'tag' in doc and doc['tag'] is not None:
                     nt = []

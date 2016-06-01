@@ -32,7 +32,7 @@ def astrid(data):
 def deref(collection, search):
     if search is None:
         return None
-    query = {}# result = collection.find_one({'_id': _id})
+    query = {}  # result = collection.find_one({'_id': _id})
     if 'name' in search:
         query['name'] = search['name']
     else:
@@ -137,7 +137,7 @@ def client():
     if port is not None and port != '':
         port = int(port)
         uri = u'%s:%s' % (uri, port)
-    log.info('Using uri: %s', uri)
+    log.info('> Connect %s', uri)
     return MongoClient(uri)
 
 

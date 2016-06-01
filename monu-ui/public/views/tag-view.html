@@ -1,14 +1,15 @@
-<div>
-  <ul style="list-style: armenian">
-  <li class="" ng-repeat="doc in tag.data">
-    <span class="col-md-10"><a ng-href="#/tag/view/_id/{{doc._id}}">{{doc.name}}</a></span>
-    <a class="hide btn btn-sm bnt-info" ng-href='#/tag/edit@/_id/{{doc._id }}'>edit</a>
-    <ul>
-    <li class="" ng-repeat="related in tag.related">
-      <span class="col-md-10"><a ng-href="#/recipe/view/_id/{{related._id}}">{{related.name}}</a></span>
-      <a class="hide btn btn-sm bnt-info" ng-href='#/tag/edit@/_id/{{doc._id }}'>edit</a>
-    </li>
-    </ul>
+<div class="row">
+  <ul style="list-style: lower-greek">
+    <li ng-repeat="doc in tag.data | orderBy: 'name'">
+      <a class="" style="text-transform: capitalize"
+         ng-href="#/tag/view/_id/{{doc._id}}"><span>{{doc.name}}</span>
+      </a>
+      <ul>
+        <li class="" style="display: block; text-decoration: none;" ng-repeat="related in tag.related">
+          <span class="col-md-10"><a ng-href="#/recipe/view/_id/{{related._id}}">{{related.name}}</a></span>
+          <a class="hide btn btn-sm bnt-info" ng-href='#/tag/edit@/_id/{{doc._id }}'>edit</a>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>

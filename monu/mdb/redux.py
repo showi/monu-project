@@ -72,6 +72,7 @@ def has_ingredient(collection, ingredient_list):
 
     return collection.map_reduce(m, CODE['sum'], 'result-has_ingredient-' + collection.name)
 
+
 def recipe_similar(collection, ingredient_list):
     tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
     m = Code(u'function () {'
@@ -89,17 +90,3 @@ def recipe_similar(collection, ingredient_list):
              u'}')
 
     return collection.map_reduce(m, CODE['sum'], 'result-has_ingredient-' + collection.name)
-
-
-if __name__ == '__main__':
-    import monu.mdb.common as mdb
-
-    searched = ['salade', 'dessert', 'huile']
-
-    with mdb.open() as db:
-        print('Recipe')
-        for row in has_tag(db.recipe, searched).find():
-            print row
-        print('Ingredient')
-        for row in has_tag(db.ingredient, searched).find():
-            print row

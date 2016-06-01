@@ -1,7 +1,9 @@
-<div>
-  <ul style="list-style: armenian">
-    <li class="" ng-repeat="doc in tag.data">
-      <span class="col-md-10"><a ng-href="#/tag/view/_id/{{doc._id}}">{{doc.name}}</a></span><a class="hide btn btn-sm bnt-info" ng-href='#/tag/edit@/_id/{{doc._id }}'>edit</a>
+<div class="row">
+  <ul style="list-style: lower-greek">
+    <li ng-repeat="doc in tag.data | orderBy: 'name'">
+      <a class="" style="text-transform: capitalize"
+         ng-href="#/recipe/view/_id/{{doc._id}}"><span>{{doc.name}}</span>
+      </a>
     </li>
   </ul>
 </div>

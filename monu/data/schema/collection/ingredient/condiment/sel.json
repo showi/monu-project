@@ -2,6 +2,10 @@
   "type": "ingredient",
   "name": "sel",
   "tag": [
-    "condiment"],
-  "lang": ["fr", "fr"]
+    "condiment"
+  ],
+  "lang": [
+    "fr",
+    "fr"
+  ]
 }

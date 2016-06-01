@@ -8,4 +8,4 @@ ADD requirements.txt /code/
 RUN pip install -r requirements.txt 
 ADD . /code/
 RUN cp monu/data/contrib/monu-docker.conf monu/data/app.conf
-CMD sh docker_start.sh
+CMD sh contrib/docker/start.sh

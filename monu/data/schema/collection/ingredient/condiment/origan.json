@@ -1,10 +1,10 @@
 {
   "type": "ingredient",
-  "name": "citron vert",
-  "parent": "citron",
+  "name": "origan",
   "tag": [
-    "fruit",
-    "agrume"
+    "plante",
+    "condiment",
+    "plantes aromatiques"
   ],
   "lang": [
     "fr",

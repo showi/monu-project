@@ -2,7 +2,10 @@
   "_id": null,
   "type": "recipe",
   "name": "pâte brisée",
-  "lang": ["fr", "fr"],
+  "lang": [
+    "fr",
+    "fr"
+  ],
   "serving": 6,
   "ingredient": [
     {

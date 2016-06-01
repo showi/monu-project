@@ -7,7 +7,6 @@ from filelike.wrappers import Decrypt  # @UnresolvedImport
 
 
 def get_file_handle(in_file, password, key_length=32, wrapper=Decrypt):
-    print ('In file: %s' % in_file)
     if isinstance(in_file, basestring):
         in_file = open(in_file, 'rb')
     bs = AES.block_size
@@ -18,7 +17,6 @@ def get_file_handle(in_file, password, key_length=32, wrapper=Decrypt):
 
 
 def derive_key_and_iv(password, salt, key_length, iv_length):
-    print '%s' % (repr(password))
     d = d_i = ''
     while len(d) < key_length + iv_length:
         d_i = md5(d_i + password + salt).digest()
@@ -59,5 +57,4 @@ def decrypt_fs(in_file, out_file, password, key_length=32):
 
 
 if __name__ == '__main__':
-    print('Testing aes')
     print get_file_handle('data/tmpy.conf', "pplop")

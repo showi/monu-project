@@ -6,6 +6,9 @@ import ConfigParser
 
 from monu import base_path
 import monu.disk as disk
+from monu.logger import getLogger
+
+log = getLogger('conf')
 
 
 class Configuration(ConfigParser.ConfigParser):
@@ -20,7 +23,7 @@ class Configuration(ConfigParser.ConfigParser):
             path.join(home, '.config', 'tmpy', self.name),
             path.join(home, '.%s' % self.name)
         ]
-        print('path: %s' % paths)
+        log.info('> path: %s' % paths)
         self.read(paths)
 
     def g(self, _path, separator='.'):
@@ -58,7 +61,3 @@ class Configuration(ConfigParser.ConfigParser):
 
 conf = Configuration()
 conf.set('main', 'base_path', base_path)
-if __name__ == '__main__':
-    path = conf.get('db.sqlite', 'path')
-    print 'db.sqlite: %s' % path
-    # print 'MaxFileSize: %s' % conf.getbytes('backend.storage', 'max_file_size')

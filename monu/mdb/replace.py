@@ -30,7 +30,6 @@ class replace(object):
         for ingredient in data['ingredient']:
             if 'name' in ingredient and isinstance(ingredient['name'], basestring):
                 ingredient.update(insert.ingredient(db, {'name': ingredient['name']}))
-                log.info('ingredient %s', ingredient)
 
     @classmethod
     def tag(cls, db, data):
@@ -42,5 +41,4 @@ class replace(object):
                 new_tag.append(insert.tag(db, {'name': tag}))
             else:
                 new_tag.append(tag)
-        log.info('New tag %s', new_tag)
         data['tag'] = new_tag

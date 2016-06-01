@@ -14,7 +14,6 @@ angular.module('monoApp')
         if (obj === undefined) {
           return true;
         }
-        console.log('Typeof object', typeof obj)
         if (typeof obj === 'string') {
           if(obj == '') {
             return true;

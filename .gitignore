@@ -6,3 +6,4 @@ monu.egg-info/
 .idea
 *.komodoproject
 *.swp
+.DS_Store

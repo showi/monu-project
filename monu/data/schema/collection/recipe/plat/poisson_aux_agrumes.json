@@ -3,7 +3,10 @@
   "type": "recipe",
   "name": "poisson aux agrumes",
   "serving": 4,
-  "lang": ["fr", "fr"],
+  "lang": [
+    "fr",
+    "fr"
+  ],
   "ingredient": [
     {
       "name": "beurre",

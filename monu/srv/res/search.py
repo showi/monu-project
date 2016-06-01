@@ -13,11 +13,13 @@ log = getLogger('srv.res.recipe')
 
 import urllib2
 
+
 def unsplit(l):
     res = []
     for v in l.split(','):
         res.append(urllib2.unquote(v))
     return res
+
 
 class HasTag(Resource):
     @requires_auth
@@ -25,7 +27,8 @@ class HasTag(Resource):
         response = []
         with mdb.util.open() as handle:
             for doc in mdb.redux.has_tag(handle[collection], unsplit(tag_list)).find():
-                response.append(digestify(mdb.common.astrid(mdb.util.find_one(handle[collection], { '_id': doc['_id']}))))
+                response.append(
+                    digestify(mdb.common.astrid(mdb.util.find_one(handle[collection], {'_id': doc['_id']}))))
         return flask.Response(response=json_util.dumps(response),
                               status=200,
                               mimetype="application/json")

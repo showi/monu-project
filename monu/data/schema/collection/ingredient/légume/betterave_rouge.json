@@ -1,6 +1,11 @@
 {
   "type": "ingredient",
   "name": "betterave rouge",
-  "tag": ["légume"],
-  "lang": ["fr", "fr"]
+  "tag": [
+    "légume"
+  ],
+  "lang": [
+    "fr",
+    "fr"
+  ]
 }

@@ -1,12 +1,11 @@
 {
-  "name": "simple courgette au four",
+  "name": "courgette au four",
   "description": "Recette pour jour de flemme",
   "type": "recipe",
   "tag": [
     "plat",
     "légume",
-    "four",
-    "curry"
+    "four"
   ],
   "serving": 4,
   "oven": {

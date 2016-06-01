@@ -1,6 +1,11 @@
 {
   "type": "ingredient",
   "name": "oignon",
-  "tag": ["légume"],
-  "lang": ["fr", "fr"]
+  "tag": [
+    "légume"
+  ],
+  "lang": [
+    "fr",
+    "fr"
+  ]
 }

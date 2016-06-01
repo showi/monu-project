@@ -2,6 +2,10 @@
   "type": "ingredient",
   "name": "pomme",
   "tag": [
-    "fruit"],
-  "lang": ["fr", "fr"]
+    "fruit"
+  ],
+  "lang": [
+    "fr",
+    "fr"
+  ]
 }

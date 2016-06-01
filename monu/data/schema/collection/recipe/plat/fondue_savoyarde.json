@@ -2,7 +2,10 @@
   "_id": null,
   "type": "recipe",
   "name": "fondue savoyarde",
-  "lang": ["fr", "fr"],
+  "lang": [
+    "fr",
+    "fr"
+  ],
   "serving": 4,
   "ingredient": [
     {

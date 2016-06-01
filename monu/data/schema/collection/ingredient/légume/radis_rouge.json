@@ -1,6 +1,11 @@
 {
   "type": "ingredient",
   "name": "radis rouge",
-  "tag": ["légume"],
-  "lang": ["fr", "fr"]
+  "tag": [
+    "légume"
+  ],
+  "lang": [
+    "fr",
+    "fr"
+  ]
 }

@@ -1,16 +1,42 @@
 {
   "type": "ingredient",
   "name": "tomate",
-  "tag": ["légume"],
-  "lang": ["fr", "fr"],
+  "tag": [
+    "légume"
+  ],
+  "lang": [
+    "fr",
+    "fr"
+  ],
   "nutrition": {
-    "per": [100, "g"],
+    "per": [
+      100,
+      "g"
+    ],
     "calorie": 18,
-    "lipide": [0.2, "g"],
-    "cholesterol": [0, "mg"],
-    "sodium": [5, "mg"],
-    "potassium": [237, "mg"],
-    "glucide": [3.9, "g"],
-    "protein": [0.9, "g"]
+    "lipide": [
+      0.2,
+      "g"
+    ],
+    "cholesterol": [
+      0,
+      "mg"
+    ],
+    "sodium": [
+      5,
+      "mg"
+    ],
+    "potassium": [
+      237,
+      "mg"
+    ],
+    "glucide": [
+      3.9,
+      "g"
+    ],
+    "protein": [
+      0.9,
+      "g"
+    ]
   }
 }

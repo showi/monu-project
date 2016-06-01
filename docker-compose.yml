@@ -2,6 +2,17 @@ version: '2'
 services:
   db:
     image: mongo 
+#  proxy:
+#    build: contrib/docker/nginx/
+#    command: nginx -g 'daemon off;'
+#    volumes:
+#      - ./code/contrib/docker/nginx:/code
+#    ports:
+#      - "7080:5000"
+#    environment:
+#      - NGINX_HOST=0.0.0.0
+#    depends_on:
+#      - web 
   web:
     build: .
     command: sh start.sh

@@ -11,11 +11,10 @@ class insert(object):
         from monu.mdb import common as mdb
         data['type'] = 'tag'
         result = mdb.find_one(db.tag, {'name': data['name']})
-        print('find one: %s' % result)
         if result is None:
             _id = db.tag.insert(data)
             result = mdb.find_one(db.tag, {'_id': _id})
-            log.debug('Tag %s inserted with id: %s', data['name'], result['_id'])
+            # log.debug('Tag %s inserted with id: %s', data['name'], result['_id'])
         return result
 
     @classmethod

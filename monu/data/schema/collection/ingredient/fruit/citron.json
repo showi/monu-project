@@ -3,6 +3,10 @@
   "name": "citron",
   "tag": [
     "fruit",
-    "agrume"],
-  "lang": ["fr", "fr"]
+    "agrume"
+  ],
+  "lang": [
+    "fr",
+    "fr"
+  ]
 }

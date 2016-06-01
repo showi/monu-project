@@ -1,0 +1,64 @@
+{
+  "name": "aubergine au four",
+  "type": "recipe",
+  "tag": [
+    "plat",
+    "légume",
+    "four"
+  ],
+  "serving": 4,
+  "oven": {
+    "temperature": 180,
+    "mesure": "celsius"
+  },
+  "ingredient": [
+    {
+      "name": "aubergine",
+      "quantity": 4,
+      "mesure": "pc"
+    },
+    {
+      "name": "tomate",
+      "quantity": 4,
+      "mesure": "g"
+    },
+    {
+      "name": "sel",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "poivre",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "origan",
+      "quantity": 2,
+      "mesure": "g"
+    }
+  ],
+  "step": [
+    {
+      "title": "Aubergine en long",
+      "text": "Laver les aubergines, les couper en deux dans le sens de la longueur. Les inciser profondément. Les mettre dans un plat à gratin",
+      "duration": 180
+    },
+    {
+      "title": "Rondelle de tomate",
+      "text": "Couper les tomates en rondelles. Les mettre sur les demi-aubergines",
+      "duration": 120
+    },
+    {
+      "title": "Assaisoner",
+      "text": "Saler, poivrer, saupoudrer généreusement d'origan",
+      "duration": 30
+    },
+    {
+      "title": "Enfourner",
+      "text": "Enfourner 30mn à 180°",
+      "duration": 1800,
+      "type": "oven"
+    }
+  ]
+}

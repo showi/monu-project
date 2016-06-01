@@ -23,7 +23,7 @@ class Application(object):
         self.init()
 
     def init(self):
-        log.info('Initialize Flask App')
+        log.info('> Initialize Flask App')
         self.init_configure()
         self.init_api()
         # self.init_storage()
@@ -66,7 +66,7 @@ class Application(object):
     def init_static(self):
         log.info(' - static')
         if not conf.getboolean('ui', 'serve_static'):
-            log.info('[-] not serving static')
+            log.info(' [-] not serving static')
             return False
         static_folder = conf.get('ui', 'static_folder')
         dist = path.basename(static_folder).lower() == 'dist'
