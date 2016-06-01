@@ -4,7 +4,7 @@
   "name": "tarte au pommes",
   "lang": "fr_fr",
   "level": "moyen",
-  "tag": ["dessert", "pomme", "tarte"],
+  "tag": ["dessert", "fruit", "tarte"],
   "child": [
     {
       "type": "recipe",
@@ -35,9 +35,9 @@
         }
       ],
       "tag": [
+        "compote",
         "dessert",
-        "pomme",
-        "rhum"
+        "fruit"
       ],
       "step": [
         {

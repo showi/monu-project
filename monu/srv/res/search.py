@@ -19,7 +19,7 @@ class HasTag(Resource):
         response = []
         with mdb.util.open() as handle:
             for doc in mdb.redux.has_tag(handle[collection], tag_list.split(',')).find():
-                response.append(digestify(mdb.util.find_one(handle[collection], doc['_id'])))
+                response.append(digestify(mdb.common.astrid(mdb.util.find_one(handle[collection], doc['_id']))))
         return flask.Response(response=json_util.dumps(response),
                               status=200,
                               mimetype="application/json")
@@ -32,7 +32,10 @@ class HasIngredient(Resource):
         response = []
         with mdb.util.open() as handle:
             for doc in mdb.redux.has_ingredient(handle[collection], ingredient_list.split(',')).find():
-                response.append(digestify(mdb.util.find_one(handle[collection], doc['_id'])))
+                log.info('Doc: %s', doc)
+                i = mdb.common.astrid(mdb.util.find_one(handle[collection], {'_id': doc['_id']}))
+                log.info('ingredient: %s', i)
+                response.append(digestify(i))
         return flask.Response(response=json_util.dumps(response),
                               status=200,
                               mimetype="application/json")

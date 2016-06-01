@@ -25,7 +25,7 @@ class Error(object):
 def astrid(data):
     if data is not None and '_id' in data and data['_id'] is not None and data['_id'] != '':
         data['_id'] = str(data['_id'])
-
+    return data
 
 def deref(collection, _id):
     # result = collection.find_one({'_id': _id})
