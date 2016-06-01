@@ -33,7 +33,7 @@ def tag(db, collection):
 
 
 def has_tag(collection, tag_list):
-    tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii') for t in tag_list])
+    tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in tag_list])
     m = Code(u'function () {'
              u'   if (this.tag === undefined) {'
              u'       return;'
@@ -53,7 +53,7 @@ def has_tag(collection, tag_list):
 
 def has_ingredient(collection, ingredient_list):
     #print ', '.join([ repr(t) for t in ingredient_list])
-    tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii') for t in ingredient_list])
+    tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
     m = Code(u'function () {'
              u'   if (this.ingredient === undefined) {'
              u'       return;'

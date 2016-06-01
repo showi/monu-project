@@ -1,16 +1,17 @@
-<div ng-repeat="doc in recipe.data" class="row">
-  <div class="col-sm-7 col-md-5 col-sm-4">
-    <a class="" style="text-transform: capitalize; color: #de877b"
-       ng-href="#/recipe/view/_id/{{doc._id}}"><span>{{doc.name}}</span>
-    </a>
-  </div>
-  <div class="col-sm-1 col-md-1"></div>
-  <div class="col-sm-4 col-md-6">
-    <ul style="display: inline-block; text-decoration: none;">
-      <li class="label label-default" ng-repeat="tag in doc.tag track by $index"
-          style="display: inline; text-align: right">
-        <a style="color: #d3b2cd; font-size: xx-small" class="" ng-href="#/tag/view/_id/{{tag._id}}">{{tag.name}}</a>
-      </li>
-    </ul>
+<div class="row">
+  <div ng-repeat="doc in recipe.data">
+    <div class="col-sm-6">
+      <a class="" style="text-transform: capitalize"
+         ng-href="#/recipe/view/_id/{{doc._id}}"><span>{{doc.name}}</span>
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <ul style="display: inline-block; text-decoration: none;">
+        <li class="" ng-repeat="tag in doc.tag track by $index"
+            style="display: inline; text-align: right">
+          <a style="font-size: xx-small" class="label label-pill label-info" ng-href="#/tag/view/_id/{{tag._id}}">{{tag.name}}</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
