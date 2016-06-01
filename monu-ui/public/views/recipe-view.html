@@ -14,7 +14,7 @@
     <div class="col-sm-12">
       <ul style="display: inline-block;list-style: lower-greek">
         <li ng-repeat="ingredient in doc.ingredient track by $index">
-          <span style="font-size: small; font-style: italic; font-weight: bold;">{{ingredient.name}}</span>
+          <span style="font-size: small; font-style: italic; font-weight: bold;"><a ng-href="#/ingredient/view/_id/{{ingredient._id}}">{{ingredient.name}}</a></span>
           &nbsp;<span style="font-size: small">{{ingredient.quantity}}&nbsp<span style="font-style: italic">{{ingredient.mesure}}</span></span>
         </li>
       </ul>

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: hasIngredient', function () {
+describe('Service: HasIngredient', function () {
 
   // load the service's module
   beforeEach(module('monoApp'));
