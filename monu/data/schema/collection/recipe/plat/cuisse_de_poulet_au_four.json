@@ -2,6 +2,7 @@
   "name": "cuisse de poulet au four",
   "description": "Recette pour jour de flemme",
   "type": "recipe",
+  "lang": ["fr", "fr"],
   "tag": [
     "poulet",
     "plat",

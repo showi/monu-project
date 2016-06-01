@@ -11,7 +11,7 @@ angular.module('monoApp')
   .service('HasTag', ['$http', 'Util', function ($http, Util) {
 
     var Service = this;
-    var urlPrefix = '/api/has_tag';
+    var urlPrefix = '/api/has/tag';
 
     Service.get = function (collection, tag_list, method) {
       method = method === undefined ? 'GET' : method;

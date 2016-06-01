@@ -1,0 +1,8 @@
+{
+  "type": "ingredient",
+  "name": "pomme",
+  "tag": [
+    "fruit",
+    "pomme"],
+  "lang": ["fr", "fr"]
+}

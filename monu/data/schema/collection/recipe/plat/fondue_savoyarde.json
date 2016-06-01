@@ -2,7 +2,8 @@
   "_id": null,
   "type": "recipe",
   "name": "fondue savoyarde",
-  "lang": "fr_fr",
+  "lang": ["fr", "fr"],
+  "serving": 4,
   "ingredient": [
     {
       "name": "emmental",

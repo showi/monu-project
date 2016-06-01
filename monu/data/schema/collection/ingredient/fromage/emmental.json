@@ -1,0 +1,9 @@
+{
+  "type": "ingredient",
+  "name": "emmental",
+  "tag": [
+    "fromage",
+    "laitier"
+  ],
+  "lang": ["fr", "fr"]
+}

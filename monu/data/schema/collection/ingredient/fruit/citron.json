@@ -1,0 +1,9 @@
+{
+  "type": "ingredient",
+  "name": "citron",
+  "tag": [
+    "fruit",
+    "agrume",
+    "citron"],
+  "lang": ["fr", "fr"]
+}

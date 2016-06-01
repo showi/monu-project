@@ -4,13 +4,13 @@
   "name": "tarte au pommes",
   "lang": "fr_fr",
   "level": "moyen",
-  "tag": ["dessert", "pomme", "tarte", "compote"],
+  "tag": ["dessert", "pomme", "tarte"],
   "child": [
     {
       "type": "recipe",
       "name": "compote de pomme sèche",
       "child_position": 0,
-      "lang": "fr_fr",
+      "lang": ["fr", "fr"],
       "level": "facile",
       "ingredient": [
         {

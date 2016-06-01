@@ -1,0 +1,10 @@
+{
+  "type": "ingredient",
+  "name": "beaufort",
+  "tag": [
+    "fromage",
+    "laitier",
+    "savoie"
+  ],
+  "lang": ["fr", "fr"]
+}

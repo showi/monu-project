@@ -49,6 +49,24 @@ def has_tag(collection, tag_list):
 
     return collection.map_reduce(m, CODE['sum'], 'result-has_tag-' + collection.name)
 
+def has_ingredient(collection, ingredient_list):
+    tl = 'var tl=[%s];' % ','.join(['"%s"' % t for t in ingredient_list])
+    m = Code('function () {'
+             '   if (this.ingredient === undefined) {'
+             '       return;'
+             '   }'
+                + tl +
+             ' var doc = this;'
+             '   this.ingredient.forEach(function(z){'
+             '       for(var i = 0, c; i < tl.length, c=tl[i]; i++) {'
+             '              if (z.name && z.name == tl[i]) {'
+             '                  emit(doc._id, 1);'
+             '              }'
+             '       }'
+             '   });'
+             '}')
+
+    return collection.map_reduce(m, CODE['sum'], 'result-has_ingredient-' + collection.name)
 
 
 def has_ingredient(collection, ingredient_list):

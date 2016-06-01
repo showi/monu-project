@@ -37,8 +37,10 @@ class Application(object):
 
     def init_api(self):
         log.info(' - api')
+        self.api.add_resource(resource.HasIngredient,
+                              '/api/has/ingredient/<string:collection>/<string:ingredient_list>')
         self.api.add_resource(resource.HasTag,
-                              '/api/has_tag/<string:collection>/<string:tag_list>')
+                              '/api/has/tag/<string:collection>/<string:tag_list>')
         self.api.add_resource(resource.Tag,
                               '/api/tag',
                               '/api/tag/<string:key>/<string:value>')

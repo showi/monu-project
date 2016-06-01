@@ -1,0 +1,10 @@
+{
+  "type": "ingredient",
+  "name": "comté",
+  "tag": [
+    "fromage",
+    "laitier",
+    "franche-comté"
+  ],
+  "lang": ["fr", "fr"]
+}

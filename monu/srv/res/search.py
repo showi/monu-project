@@ -24,3 +24,16 @@ class HasTag(Resource):
         return flask.Response(response=json_util.dumps(response),
                               status=200,
                               mimetype="application/json")
+
+class HasIngredient(Resource):
+
+    @requires_auth
+    def get(self, collection=None, ingredient_list=None):
+        #tag_list = tag_list.split(',')
+        response = []
+        with mdb.util.open() as handle:
+            for doc in mdb.redux.has_ingredient(handle[collection], ingredient_list.split(',')).find():
+                response.append(digestify(mdb.util.find_one(handle[collection], doc['_id'])))
+        return flask.Response(response=json_util.dumps(response),
+                              status=200,
+                              mimetype="application/json")

@@ -50,23 +50,24 @@ def load_json(path, schema_path=collection_path):
 
 
 def preload_collection(db):
-    for path, fn in list_schema(schema_path=collection_path):
-        log.info('> Loading json %s %s', path, fn)
-        js = load_json(os.path.join(path, fn))
-        if isinstance(js, list):
-            log.info('< Skip json list %s' % fn)
-            continue
-        if 'type' not in js or js['type'] not in VALID_COLLECTION:
-            raise Error.InvalidCollection(fn)
-        replace.child(db, js)
-        replace.tag(db, js)
-        replace.ingredient(db, js)
-        try:
-            if '_id' in js:
-                del js['_id']
-            db[js['type']].insert(js)
-        except Exception as e:
-            log.error('Error: Cannot load collection: %s\n\t%s' % (fn, e))
+    for collection in ['tag', 'ingredient', 'recipe']:
+        for path, fn in list_schema(schema_path=os.path.join(collection_path, collection)):
+            log.info('> Loading json %s %s', path, fn)
+            js = load_json(os.path.join(path, fn))
+            if isinstance(js, list):
+                log.info('< Skip json list %s' % fn)
+                continue
+            if 'type' not in js or js['type'] not in VALID_COLLECTION:
+                raise Error.InvalidCollection(fn)
+            replace.child(db, js)
+            replace.tag(db, js)
+            replace.ingredient(db, js)
+            try:
+                if '_id' in js:
+                    del js['_id']
+                db[js['type']].insert(js)
+            except Exception as e:
+                log.error('Error: Cannot load collection: %s\n\t%s' % (fn, e))
 
 
 class qcache(object):
