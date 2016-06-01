@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import os
 from skimage import io  # @UnresolvedImport
 from skimage.transform import resize as ski_resize  # @UnresolvedImport

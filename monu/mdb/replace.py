@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from monu.logger import getLogger
 from monu.mdb.insert import insert
 

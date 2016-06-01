@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import flask
 from flask_restful import Resource
 from bson import ObjectId, json_util
@@ -18,7 +19,7 @@ class Recipe(Resource):
             value = ObjectId(value)
         response = []
         search = {}
-        #handle = mdb.open()
+        # handle = mdb.open()
 
         if key is not None:
             search = {key: value}

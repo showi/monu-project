@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from flask_restful import Resource
 
 from monu.logger import getLogger

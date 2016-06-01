@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from functools import wraps
 from flask import request, Response
 from monu.conf import conf

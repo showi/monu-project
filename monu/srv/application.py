@@ -1,15 +1,17 @@
+# -*- coding: utf-8 -*-
+
 import os.path as path
 from flask import Flask, send_from_directory
 from flask_restful import Api
-# import flask.ext.uploads as uploads  # @UnresolvedImport @UnusedImport
-
 
 from monu.conf import conf
 import monu.logger
 from monu.srv import res as resource
+
 log = monu.logger.getLogger('srv.application')
 
-allowed_extensions = ('fs', )
+allowed_extensions = ('fs',)
+
 
 class Application(object):
     def __init__(self):
@@ -27,7 +29,7 @@ class Application(object):
         self.init_static()
 
     def init_configure(self):
-        log.info(' - configure' )
+        log.info(' - configure')
         self.app.config['SECRET_KEY'] = conf.get('backend', 'secret')
         self.app.config['BUNDLE_ERRORS'] = True
         # self.app.config['UPLOAD_FOLDER'] = conf.get('backend.storage', 'path')
@@ -35,8 +37,8 @@ class Application(object):
 
     def init_api(self):
         log.info(' - api')
-       # self.api.add_resource(resource.Ref,
-       #                       '/api/ref/<string:collection>/<string:key>/<string:value>')
+        self.api.add_resource(resource.HasTag,
+                              '/api/has_tag/<string:collection>/<string:tag_list>')
         self.api.add_resource(resource.Tag,
                               '/api/tag',
                               '/api/tag/<string:key>/<string:value>')

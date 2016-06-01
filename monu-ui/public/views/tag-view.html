@@ -1,7 +1,14 @@
 <div>
   <ul style="list-style: armenian">
   <li class="" ng-repeat="doc in tag.data">
-    <span class="col-md-10">{{doc.name}}</span><a class="hide btn btn-sm bnt-info" ng-href='#/tag/edit@/_id/{{doc._id }}'>edit</a>
-  </li>
+    <span class="col-md-10">{{doc.name}}</span>
+    <a class="hide btn btn-sm bnt-info" ng-href='#/tag/edit@/_id/{{doc._id }}'>edit</a>
+    <ul>
+    <li class="" ng-repeat="related in tag.related">
+      <span class="col-md-10"><a ng-href="#/recipe/view/_id/{{related._id}}">{{related.name}}</a></span>
+      <a class="hide btn btn-sm bnt-info" ng-href='#/tag/edit@/_id/{{doc._id }}'>edit</a>
+    </li>
+    </ul>
+    </li>
   </ul>
 </div>

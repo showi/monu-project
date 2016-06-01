@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from hashlib import md5
 from Crypto.Cipher import AES
 from Crypto import Random

@@ -8,8 +8,8 @@
  * Controller of the monoApp
  */
 angular.module('monoApp')
-  .controller('RecipeCtrl', ['$route', '$scope', 'Recipe', 'Ingredient', 'Tag', 'Schema', 'Util',
-    function ($route, $scope, Recipe, Ingredient, Tag, Schema, Util) {
+  .controller('RecipeCtrl', ['$route', '$scope', 'Recipe', 'Ingredient', 'Tag', 'Schema', 'Util', 'HasTag',
+    function ($route, $scope, Recipe, Ingredient, Tag, Schema, Util, HasTag) {
 
       var Ctl = this;
 

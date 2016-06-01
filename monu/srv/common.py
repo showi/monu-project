@@ -66,3 +66,4 @@ def digestify(doc, keyring=['ingredient', 'child', 'step']):
     for key in keyring:
         if key in doc:
             del doc[key]
+    return doc

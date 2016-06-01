@@ -3,7 +3,6 @@
   "description": "Recette pour jour de flemme",
   "type": "recipe",
   "tag": [
-    "poulet",
     "plat",
     "four",
     "curry"
@@ -11,7 +10,7 @@
   "serving": 4,
   "oven": {
     "temperature": 180,
-    "mesure": "celius"
+    "mesure": "celsius"
   },
   "ingredient": [
     {

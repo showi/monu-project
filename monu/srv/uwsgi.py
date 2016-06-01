@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from monu.conf import conf
 from monu.srv.application import application as _application
 
