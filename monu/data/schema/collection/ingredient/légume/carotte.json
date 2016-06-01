@@ -1,7 +1,6 @@
 {
   "type": "ingredient",
-  "name": "poivre",
-  "tag": [
-    "condiment"],
+  "name": "carotte",
+  "tag": ["légume"],
   "lang": ["fr", "fr"]
 }

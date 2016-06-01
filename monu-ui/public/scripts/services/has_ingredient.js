@@ -12,9 +12,9 @@ angular.module('monoApp')
     var Service = this;
     var urlPrefix = '/api/has/ingredient';
 
-    Service.get = function (collection, ingredient_list, method) {
+    Service.get = function (collection, key, ingredient_list, method) {
       method = method === undefined ? 'GET' : method;
-      var url = Util.join(urlPrefix, collection, ingredient_list);
+      var url = Util.join(urlPrefix, collection, key, ingredient_list);
       return $http({
         'method': method,
         'url': url

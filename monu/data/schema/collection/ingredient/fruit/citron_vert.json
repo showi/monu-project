@@ -4,7 +4,6 @@
   "parent": "citron",
   "tag": [
     "fruit",
-    "agrume",
-    "citron"],
+    "agrume"],
   "lang": ["fr", "fr"]
 }

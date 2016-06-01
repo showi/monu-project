@@ -21,7 +21,7 @@ def unsplit(l):
 
 class HasTag(Resource):
     @requires_auth
-    def get(self, collection=None, tag_list=None):
+    def get(self, collection=None, key=None, tag_list=None):
         response = []
         with mdb.util.open() as handle:
             for doc in mdb.redux.has_tag(handle[collection], unsplit(tag_list)).find():
@@ -33,7 +33,7 @@ class HasTag(Resource):
 
 class HasIngredient(Resource):
     @requires_auth
-    def get(self, collection=None, ingredient_list=None):
+    def get(self, collection=None, key=None, ingredient_list=None):
         response = []
         with mdb.util.open() as handle:
             for doc in mdb.redux.has_ingredient(handle[collection], unsplit(ingredient_list)).find():

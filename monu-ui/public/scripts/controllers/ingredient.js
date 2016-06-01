@@ -23,12 +23,9 @@ angular.module('monoApp')
             angular.copy(response.data, Ctl.data);
             if (Ctl.data.length == 1) {
               for (var i = 0, doc; i < Ctl.data.length, doc = Ctl.data[i]; i++) {
-                console.log('Response', doc);
-                if (!Util.isEmpty(doc.name)) {
-                  HasIngredient.get('recipe', doc.name).then(function (tag_list) {
-                    console.log('Taglist', tag_list);
+                if (!Util.isEmpty(doc._id)) {
+                  HasIngredient.get('recipe', '_id', doc._id).then(function (tag_list) {
                     for (var i = 0, tag; i < tag_list.data.length, tag = tag_list.data[i]; i++) {
-                      console.log('Pushing ingredient: %s', tag);
                       Ctl.related.push(tag);
                     }
                   });

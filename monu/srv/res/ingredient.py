@@ -21,8 +21,13 @@ class Ingredient(Resource):
             search = {key: value}
         with mdb.util.open() as handle:
             for doc in mdb.util.find(handle.ingredient, search):
-                mdb.util.astrid(doc)
+                doc = mdb.util.astrid(doc)
+                log.info('doc id %s', doc['_id'])
+                if 'tag' in doc:
+                    [mdb.util.astrid(tag) for tag in doc['tag']]
                 response.append(doc)
-        return flask.Response(response=json_util.dumps(response),
+            js = json_util.dumps(response)
+            log.info('js id %s', js)
+        return flask.Response(response=js,
                               status=200,
                               mimetype="application/json")
