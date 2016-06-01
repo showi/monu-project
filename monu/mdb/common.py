@@ -6,6 +6,7 @@ import monu
 from monu.util import file_as_string
 from monu.logger import getLogger
 from pymongo import MongoClient
+import bson
 from monu.conf import conf
 from monu.mdb.replace import replace
 
@@ -29,13 +30,14 @@ def astrid(data):
 
 
 def deref(collection, search):
+    if search is None:
+        return None
     query = {}# result = collection.find_one({'_id': _id})
     if 'name' in search:
         query['name'] = search['name']
     else:
         query['_id'] = search['_id']
     result = find_one(collection, query)
-    log.info('dereference: %s', result)
     return result
 
 
@@ -80,10 +82,14 @@ class qcache(object):
 
     @classmethod
     def set(cls, key, value):
+        if value is None:
+            return
         cls._data[key] = value
 
     @classmethod
     def get(cls, key):
+        if key not in cls._data:
+            return None
         return cls._data[key]
 
     @classmethod
@@ -95,27 +101,34 @@ class qcache(object):
 
 def _mk_key(mode, collection, query):
     key = u'%s/%s' % (mode, collection.name)
-    key += ''.join([u'/%s/%s/' % (k, '%s' % query[k]) for k in sorted(query)])
-    # if key[-1] == '/':
-    #    key = key[:-1]
-    log.info('key: %s' % key)
+    key += u''.join([u'/%s/%s/' % (k, u'%s' % query[k]) for k in sorted(query)])
+    if key[-1] == '/':
+        key = key[:-1]
     return key
 
 
 def find(collection, query):
-    return [doc for doc in collection.find(query)]
-    # key = _mk_key(u'find', collection, query)
-    # if not qcache.exists(key):
-    #     qcache.set(key, [doc for doc in collection.find(query)])
-    # return qcache.get(key)
+    key = _mk_key(u'find', collection, query)
+    if '_id' in query:
+        query['_id'] = bson.ObjectId(query['_id'])
+    if not qcache.exists(key):
+        result = [doc for doc in collection.find(query)]
+        if len(result) == 0:
+            return []
+        qcache.set(key, result)
+    return qcache.get(key)
 
 
 def find_one(collection, query):
-    return collection.find_one(query)
-    # key = _mk_key(u'find_one', collection, query)
-    # if not qcache.exists(key):
-    #     qcache.set(key, collection.find_one(query))
-    # return qcache.get(key)
+    key = _mk_key(u'find_one', collection, query)
+    if '_id' in query:
+        query['_id'] = bson.ObjectId(query['_id'])
+    if not qcache.exists(key):
+        result = collection.find_one(query)
+        if result is None:
+            return None
+        qcache.set(key, result)
+    return qcache.get(key)
 
 
 def client():

@@ -2,6 +2,8 @@ all:
 
 clean:
 	find monu/ -name "*.pyc" -exec rm '{}' \;
+
+clean_all:
 	find monu/ -name ".DS_Store" -exec rm '{}' \;
 	rm -rf build/ dist/ env/ *.egg-info
 

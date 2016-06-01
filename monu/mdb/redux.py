@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from bson.code import Code
+from monu.logger import getLogger
+
+log = getLogger('mdb.redux')
 
 CODE = {
     'sum': Code('function(key, values) {'
@@ -52,7 +55,24 @@ def has_tag(collection, tag_list):
 
 
 def has_ingredient(collection, ingredient_list):
-    #print ', '.join([ repr(t) for t in ingredient_list])
+    tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
+    m = Code(u'function () {'
+             u'   if (this.ingredient === undefined) {'
+             u'       return;'
+             u'   }' + tl +
+             u' var doc = this;'
+             u'   this.ingredient.forEach(function(z){'
+             u'       for(var i = 0, c; i < tl.length, c=tl[i]; i++) {'
+             u'              if (z._id && z._id == tl[i]) {'
+             u'                  emit(doc._id, 1);'
+             u'              }'
+             u'       }'
+             u'   });'
+             u'}')
+
+    return collection.map_reduce(m, CODE['sum'], 'result-has_ingredient-' + collection.name)
+
+def recipe_similar(collection, ingredient_list):
     tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
     m = Code(u'function () {'
              u'   if (this.ingredient === undefined) {'
