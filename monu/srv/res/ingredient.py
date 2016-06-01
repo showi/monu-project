@@ -20,7 +20,6 @@ class Ingredient(Resource):
             if key == '_id':
                 value = ObjectId(value)
             search = {key: value}
-        #search = {}
         log.info('Searching ingredient: %s', search)
         with mdb.util.open() as handle:
             for doc in mdb.util.find(handle.ingredient, search):
