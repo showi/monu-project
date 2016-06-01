@@ -6,10 +6,6 @@ import ConfigParser
 
 from monu import base_path
 import monu.disk as disk
-from monu.logger import getLogger
-
-log = getLogger('conf')
-
 
 class Configuration(ConfigParser.ConfigParser):
     name = 'app.conf'
@@ -23,7 +19,6 @@ class Configuration(ConfigParser.ConfigParser):
             path.join(home, '.config', 'tmpy', self.name),
             path.join(home, '.%s' % self.name)
         ]
-        log.info('> path: %s' % paths)
         self.read(paths)
 
     def g(self, _path, separator='.'):
