@@ -7,6 +7,7 @@ import time
 
 from monu.conf import conf
 
+
 def touch(path):
     with open(path, 'a'):
         os.utime(path, None)

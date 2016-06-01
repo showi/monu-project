@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# noinspection PyShadowingBuiltins
 class list(object):
     @classmethod
     def tag(cls, db, query={}):

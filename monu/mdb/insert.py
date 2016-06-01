@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from monu.logger import getLogger
+
 log = getLogger('mdb.replace')
 
 

@@ -19,6 +19,7 @@ class Application(object):
                          static_url_path=conf.get('ui', 'static_folder'))
         self.api = Api(self.app)
         self.debug = conf.getboolean('debug', 'active')
+        self.fileSet = None
         self.init()
 
     def init(self):

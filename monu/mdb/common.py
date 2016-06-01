@@ -99,18 +99,18 @@ def _mk_key(mode, collection, query):
 
 def find(collection, query):
     return [doc for doc in collection.find(query)]
-    key = _mk_key(u'find', collection, query)
-    if not qcache.exists(key):
-        qcache.set(key, [doc for doc in collection.find(query)])
-    return qcache.get(key)
+    # key = _mk_key(u'find', collection, query)
+    # if not qcache.exists(key):
+    #     qcache.set(key, [doc for doc in collection.find(query)])
+    # return qcache.get(key)
 
 
 def find_one(collection, query):
     return collection.find_one(query)
-    key = _mk_key(u'find_one', collection, query)
-    if not qcache.exists(key):
-        qcache.set(key, collection.find_one(query))
-    return qcache.get(key)
+    # key = _mk_key(u'find_one', collection, query)
+    # if not qcache.exists(key):
+    #     qcache.set(key, collection.find_one(query))
+    # return qcache.get(key)
 
 
 def client():
@@ -126,6 +126,7 @@ def client():
 _db_default = 'monu'
 
 
+# noinspection PyShadowingBuiltins
 class open(object):
     """
     context manager for opening mango database
@@ -151,7 +152,7 @@ class open(object):
             raise self.Error.ConnectionFail()
         return self.handle[self.name]
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, type_, value, traceback):
         self.handle.close()
 
 
@@ -175,10 +176,10 @@ if __name__ == '__main__':
             print('%s %s' % (elapsed, msg))
 
 
-    elapsed('start')
-    result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
-    elapsed('deux')
-    result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
-    elapsed('trois')
-    result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
-    elapsed('quatre')
+            # elapsed('start')
+            # result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
+            # elapsed('deux')
+            # result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
+            # elapsed('trois')
+            # result = find_one(open(), 'recipe', {'name': 'sauce moutarde'})
+            # elapsed('quatre')

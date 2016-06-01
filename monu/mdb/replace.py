@@ -31,11 +31,11 @@ class replace(object):
         for ingredient in data['ingredient']:
             if 'name' in ingredient and isinstance(ingredient['name'], basestring):
                 ingredient.update(insert.ingredient(db, {'name': ingredient['name']}))
-                #ingredient.update(ni)
-                #new_ingredient.append()
-            #else:
-            #    new_ingredient.append(ingredient)
-        #data['ingredient'] = new_ingredient
+                # ingredient.update(ni)
+                # new_ingredient.append()
+                # else:
+                #    new_ingredient.append(ingredient)
+                # data['ingredient'] = new_ingredient
 
     @classmethod
     def tag(cls, db, data):

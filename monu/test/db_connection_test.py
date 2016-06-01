@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import unittest
 
 from monu import mdb
@@ -45,7 +47,7 @@ class TestDb(unittest.TestCase):
     def test_mapreduce(self):
         from monu.mdb import redux
         with mdb.util.open(self.db_name) as handle:
-            for tl in [['entrée', ], ['plat',], ['desser',], ['citron', 'rhum']]:
+            for tl in [['entrée', ], ['plat', ], ['desser', ], ['citron', 'rhum']]:
                 print "> recipe has_tag %s" % tl
                 for doc in redux.has_tag(handle.recipe, tl).find():
                     print ' - %s' % mdb.util.find_one(handle.recipe, doc['_id'])['name']

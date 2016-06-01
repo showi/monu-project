@@ -13,10 +13,9 @@ log = getLogger('srv.res.recipe')
 
 
 class HasTag(Resource):
-
     @requires_auth
     def get(self, collection=None, tag_list=None):
-        #tag_list = tag_list.split(',')
+        # tag_list = tag_list.split(',')
         response = []
         with mdb.util.open() as handle:
             for doc in mdb.redux.has_tag(handle[collection], tag_list.split(',')).find():
@@ -25,11 +24,11 @@ class HasTag(Resource):
                               status=200,
                               mimetype="application/json")
 
-class HasIngredient(Resource):
 
+class HasIngredient(Resource):
     @requires_auth
     def get(self, collection=None, ingredient_list=None):
-        #tag_list = tag_list.split(',')
+        # tag_list = tag_list.split(',')
         response = []
         with mdb.util.open() as handle:
             for doc in mdb.redux.has_ingredient(handle[collection], ingredient_list.split(',')).find():
