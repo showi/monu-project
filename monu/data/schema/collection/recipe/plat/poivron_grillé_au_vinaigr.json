@@ -1,0 +1,66 @@
+{
+  "name": "poivron grillé au vinaigre",
+  "type": "recipe",
+  "lang": [
+    "fr",
+    "fr"
+  ],
+  "tag": [
+    "légume",
+    "entrée"
+  ],
+  "serving": 4,
+  "oven": {
+    "temperature": 250,
+    "position": "grill"
+  },
+  "ingredient": [
+    {
+      "name": "poivron",
+      "quantity": 2,
+      "mesure": "pc"
+    },
+    {
+      "name": "vinaigre de vin rouge parfumé à la noix",
+      "quantity": 10,
+      "mesure": "cl"
+    }
+  ],
+  "step": [
+    {
+      "title": "Laver & couper",
+      "text": "Laver et couper les poivrons dans le sens de la longueur. Disposer les poivrons sur un plat  dos vers le haut",
+      "duration": 120
+    },
+    {
+      "title": "Passer au grill",
+      "text": "Enfourner les poivrons sous le grill pour 25mn, la peau doit être grillée, noir",
+      "duration": 1500
+    },
+    {
+      "title": "Refroidis",
+      "text": "Laisser refroidir en couvrant votre plat.",
+      "duration": 600
+    },
+    {
+      "title": "Manque de peau",
+      "text": "Enlever la peau des poivrons, elle doit venir toute seul, sinon c'est que les poivrons n'étaient pas assé grillé.",
+      "duration": 60
+    },
+    {
+      "title": "Lanière",
+      "text": "Couper les poivrons en lanière de 1 ou 2 cm",
+      "duration": 60
+    },
+    {
+      "title": "Asperger",
+      "text": "Mettre les lanière dans un récipient assé profond et recouvrir de vinaigre",
+      "duration": 30
+    },
+    {
+      "title": "Au frais",
+      "text": "Couvrir et mettre au réfrigérateur",
+      "duration": 1800
+    }
+  ]
+}

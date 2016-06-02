@@ -1,0 +1,12 @@
+{
+  "type": "ingredient",
+  "name": "rhum ambré",
+  "parent": { "name": "rhum"},
+  "tag": [
+    "alcool"
+  ],
+  "lang": [
+    "fr",
+    "fr"
+  ]
+}

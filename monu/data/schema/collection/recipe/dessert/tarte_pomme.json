@@ -9,6 +9,13 @@
     "fruit",
     "tarte"
   ],
+  "ingredient": [
+    {
+      "name": "rhum blanc",
+      "quantity": 1,
+      "mesure": "cas"
+    }
+  ],
   "child": [
     {
       "type": "recipe",
@@ -20,11 +27,6 @@
       ],
       "level": "facile",
       "ingredient": [
-        {
-          "name": "rhum blanc",
-          "quantity": 1,
-          "mesure": "cas"
-        },
         {
           "name": "sucre",
           "quantity": 25,
