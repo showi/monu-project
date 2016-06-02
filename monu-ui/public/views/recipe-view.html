@@ -3,18 +3,16 @@
             <span class="col-sm-8" style="text-transform: capitalize;">
               <a ng-href="#/recipe/view/_id/{{doc._id}}">{{doc.name}}</a>
             </span>
-            <span class="col-sm-4">
-                <a class="hide btn btn-md bnt-info" ng-href='#/recipe/edit/_id/{{doc._id}}'>edit</a>
-            </span>
   </div>
   <div>
     <div class="col-sm-12">
       <span ng-repeat="tag in doc.tag track by $index" class="label"><a ng-href="#/tag/view/_id/{{tag._id}}">{{tag.name}}</a></span>
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-8">
       <ul style="display: inline-block;list-style: lower-greek">
         <li ng-repeat="ingredient in doc.ingredient track by $index">
-          <span style="font-size: small; font-style: italic; font-weight: bold;"><a ng-href="#/ingredient/view/_id/{{ingredient._id}}">{{ingredient.name}}</a></span>
+          <span style="font-size: small; font-style: italic; font-weight: bold;"><a
+            ng-href="#/ingredient/view/_id/{{ingredient._id}}">{{ingredient.name}}</a></span>
           &nbsp;<span style="font-size: small">{{ingredient.quantity}}&nbsp<span style="font-style: italic">{{ingredient.mesure}}</span></span>
         </li>
       </ul>
@@ -38,5 +36,23 @@
         </li>
       </ul>
     </div>
+  </div>
+  <div class="col-sm-4" ng-show="recipe.similar.length > 0">
+    <p>Similaire</p>
+    <ul ng-repeat="sim in recipe.similar | orderBy: '-value'">
+      <li ng-if="sim._id !== recipe.data[0]._id">
+        <a ng-href="/#/recipe/view/_id/{{sim._id}}">
+          {{sim.name}}
+        </a>
+      </li>
+    </ul>
+    <p>Relatif</p>
+    <ul ng-repeat="rel in recipe.related | orderBy: '-value'">
+      <li ng-if="rel._id !== recipe.data[0]._id">
+        <a ng-href="/#/recipe/view/_id/{{rel._id}}">
+          {{rel.name}}
+        </a>
+      </li>
+    </ul>
   </div>
 </div>

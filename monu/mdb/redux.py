@@ -35,7 +35,7 @@ def tag(db, collection):
     return db[collection].map_reduce(m, r, 'result-' + collection)
 
 
-def has_tag(collection, tag_list):
+def has_tag(collection, tag_list, key='_id'):
     tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in tag_list])
     m = Code(u'function () {'
              u'   if (this.tag === undefined) {'
@@ -44,7 +44,7 @@ def has_tag(collection, tag_list):
              u' var doc = this;'
              u'   this.tag.forEach(function(z){'
              u'       for(var i = 0, c; i < tl.length, c=tl[i]; i++) {'
-             u'              if (z._id && z._id == tl[i]) {'
+             u'              if (z["'+key+'"] && z["'+key+'"] == tl[i]) {'
              u'                  emit(doc._id, 1);'
              u'              }'
              u'       }'
@@ -54,8 +54,9 @@ def has_tag(collection, tag_list):
     return collection.map_reduce(m, CODE['sum'], 'result-has_tag-' + collection.name)
 
 
-def has_ingredient(collection, ingredient_list):
-    tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
+def has_ingredient(collection, ingredient_list, key='_id'):
+    ingredient_list = u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
+    tl = u'var tl=[%s];' % ingredient_list
     m = Code(u'function () {'
              u'   if (this.ingredient === undefined) {'
              u'       return;'
@@ -63,30 +64,11 @@ def has_ingredient(collection, ingredient_list):
              u' var doc = this;'
              u'   this.ingredient.forEach(function(z){'
              u'       for(var i = 0, c; i < tl.length, c=tl[i]; i++) {'
-             u'              if (z._id && z._id == tl[i]) {'
+             u'              if (z["' + key +u'"] && z["' + key + u'"] == tl[i]) {'
              u'                  emit(doc._id, 1);'
              u'              }'
              u'       }'
              u'   });'
              u'}')
 
-    return collection.map_reduce(m, CODE['sum'], 'result-has_ingredient-' + collection.name)
-
-
-def recipe_similar(collection, ingredient_list):
-    tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
-    m = Code(u'function () {'
-             u'   if (this.ingredient === undefined) {'
-             u'       return;'
-             u'   }' + tl +
-             u' var doc = this;'
-             u'   this.ingredient.forEach(function(z){'
-             u'       for(var i = 0, c; i < tl.length, c=tl[i]; i++) {'
-             u'              if (z._id && z._id == tl[i]) {'
-             u'                  emit(doc._id, 1);'
-             u'              }'
-             u'       }'
-             u'   });'
-             u'}')
-
-    return collection.map_reduce(m, CODE['sum'], 'result-has_ingredient-' + collection.name)
+    return collection.map_reduce(m, CODE['sum'], 'result-has_ingredient-%s' % ingredient_list)
