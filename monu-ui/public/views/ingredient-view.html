@@ -1,6 +1,6 @@
-<div class="">
+<div class="row">
   <ul style="list-style: lower-greek">
-    <li ng-repeat="doc in ingredient.data | orderBy: 'name'" class="row">
+    <li ng-repeat="doc in ingredient.data | orderBy: 'name'" class="">
       <div class="col-sm-4">
         <a style="text-transform: capitalize" ng-href="#/ingredient/view/_id/{{doc._id}}">
           <span>{{doc.name}}</span>
@@ -11,9 +11,12 @@
           </li>
         </ul>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-8 panel panel-warning">
+          <div class="panel-heading">
+            Relatif
+          </div>
+        <div class="panel-body">
         <ul style="list-style: cjk-ideographic">
-          Relatif aux recettes
           <li class="" style="display: block; text-decoration: none;" ng-repeat="related in ingredient.related.recipe">
             <a ng-href="#/recipe/view/_id/{{related._id}}">
               {{related.name}}
@@ -21,13 +24,13 @@
           </li>
         </ul>
         <ul style="list-style: hiragana">
-          Relatif aux ingrédients
           <li class="" style="display: block; text-decoration: none;" ng-repeat="related in ingredient.related.tag">
               <a ng-href="#/recipe/view/_id/{{related._id}}">
                 {{related.name}}
               </a>
           </li>
         </ul>
+        </div>
       </div>
     </li>
   </ul>

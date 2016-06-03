@@ -4,20 +4,23 @@
       <a class="col-sm-6" style="text-transform: capitalize" ng-href="#/tag/view/_id/{{doc._id}}">
         {{doc.name}}
       </a>
-      <span class="col-sm-6">
-        <ul style="list-style: armenian">
-          <li style="list-style: none">Relatif aux recettes</li>
+      <div class="col-sm-6 panel panel-warning">
+        <div class="panel-heading">
+          Relatif
+        </div>
+        <div class="panel-body">
+        <ul style="list-style: cjk-ideographic  ">
           <li class="" style="" ng-repeat="related in tag.related.recipe">
             <span class=""><a ng-href="#/recipe/view/_id/{{related._id}}">{{related.name}}</a></span>
           </li>
         </ul>
-        <ul style="list-style: armenian">
-          <li style="list-style: none">Relatif aux ingrédients</li>
+        <ul style="list-style: hebrew">
           <li class="" style="" ng-repeat="related in tag.related.tag">
             <span class=""><a ng-href="#/ingredient/view/_id/{{related._id}}">{{related.name}}</a></span>
           </li>
         </ul>
-      </span>
+          </div>
+        </div>
     </li>
   </ul>
 </div>
