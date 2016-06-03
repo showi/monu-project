@@ -22,12 +22,12 @@ angular.module('monoApp')
               console.error('Cannot get ingredient: %s (%s)', response.status_text, response.config.url);
             }
             angular.copy(response.data, Ctl.data);
-            if (Ctl.data[0].tag !== undefined && Ctl.data[0].length > 0){
+            if (Ctl.data[0].tag !== undefined && Ctl.data[0].length > 0) {
               var tag_list = '';
-              for(var i = 0, c; i < Ctl.data[0].tag.length, c=Ctl.data[0].tag[i]; i++) {
+              for (var i = 0, c; i < Ctl.data[0].tag.length, c = Ctl.data[0].tag[i]; i++) {
                 tag_list += c.name + ',';
               }
-              HasTag.get('ingredient', '_id', tag_list).then(function(response) {
+              HasTag.get('ingredient', '_id', tag_list).then(function (response) {
                 angular.copy(response.data, Ctl.related_tag);
               });
             }

@@ -18,7 +18,7 @@ angular
     'ngTouch',
     'schemaForm',
     'angular-json-editor'
-])
+  ])
   .config(function ($routeProvider, JSONEditorProvider) {
     $routeProvider
       .when('/', {
@@ -75,18 +75,18 @@ angular
         redirectTo: '/'
       });
 
-      JSONEditorProvider.configure({
-            plugins: {
-                sceditor: {
-                    style: 'sce/development/jquery.sceditor.default.css'
-                }
-            },
-            defaults: {
-                options: {
-                    iconlib: 'bootstrap3',
-                    theme: 'bootstrap3',
-                    ajax: true
-                }
-            }
-        });
+    JSONEditorProvider.configure({
+      plugins: {
+        sceditor: {
+          style: 'sce/development/jquery.sceditor.default.css'
+        }
+      },
+      defaults: {
+        options: {
+          iconlib: 'bootstrap3',
+          theme: 'bootstrap3',
+          ajax: true
+        }
+      }
+    });
   });

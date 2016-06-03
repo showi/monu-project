@@ -19,7 +19,7 @@ angular.module('monoApp')
           return null;
         }
         var newlist = [];
-        for(var i = 0, item; tag_list.length, item=tag_list[i]; i++) {
+        for (var i = 0, item; tag_list.length, item = tag_list[i]; i++) {
           newlist.push(item.name);
         }
         tag_list = newlist.join(',');

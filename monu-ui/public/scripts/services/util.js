@@ -10,12 +10,12 @@
 angular.module('monoApp')
   .service('Util', function () {
     return {
-      isEmpty: function(obj) {
+      isEmpty: function (obj) {
         if (obj === undefined) {
           return true;
         }
         if (typeof obj === 'string') {
-          if(obj == '') {
+          if (obj == '') {
             return true;
           }
           return false;
@@ -23,7 +23,7 @@ angular.module('monoApp')
           throw 'Using isEmpty on unsupported data type';
         }
       },
-      join: function() {
+      join: function () {
         return [].join.call(arguments, '/');
       }
     };

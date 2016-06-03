@@ -28,10 +28,10 @@ angular.module('monoApp')
 
     Service.restructure = function (json) {
       if (!Array.isArray(json)) json = [json];
-      for(var i=0, recipe; i < json.length, recipe=json[i]; i++) {
-        if(recipe.child !== undefined && Array.isArray(recipe.child) ) {
+      for (var i = 0, recipe; i < json.length, recipe = json[i]; i++) {
+        if (recipe.child !== undefined && Array.isArray(recipe.child)) {
           recipe.child_recipe = [];
-          for(var i=0, child; i < recipe.child, child=recipe.child[i]; i++) {
+          for (var i = 0, child; i < recipe.child, child = recipe.child[i]; i++) {
             recipe.child_recipe.push(child);
           }
         }

@@ -36,6 +36,7 @@ def tag(db, collection):
 
 
 def has_tag(collection, tag_list, key='_id'):
+    name = _mk_name('has_ingredient', collection, tag_list, key)
     tl = u'var tl=[%s];' % u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in tag_list])
     m = Code(u'function () {'
              u'   if (this.tag === undefined) {'
@@ -51,11 +52,16 @@ def has_tag(collection, tag_list, key='_id'):
              u'   });'
              u'}')
 
-    return collection.map_reduce(m, CODE['sum'], 'result-has_tag-' + collection.name)
+    return collection.map_reduce(m, CODE['sum'], name)
 
+import hashlib
+def _mk_name(name, collection, list, key):
+    h = hashlib.md5()
+    h.update(u'%s%s%s%s' % (name, collection.name, u''.join([k.encode('ascii', errors='replace') for k in  sorted(list)]), key))
+    return h.hexdigest()
 
 def has_ingredient(collection, ingredient_list, key='_id'):
-    name = 'result-has_ingredient-%s' % ','.join(ingredient_list)
+    name = _mk_name('has_ingredient', collection, ingredient_list, key)
     ingredient_list = u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
     tl = u'var tl=[%s];' % ingredient_list
     m = Code(u'function () {'
