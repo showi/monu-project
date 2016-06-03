@@ -1,23 +1,23 @@
 {
   "_id": null,
   "type": "recipe",
-  "name": "salade des deux terres",
+  "name": "salade mélangée",
   "lang": "fr_fr",
   "ingredient": [
     {
-      "name": "betterave rouge",
-      "quantity": 0.5,
-      "mesure": "pc"
-    },
-    {
       "name": "tomate",
-      "quantity": 3,
+      "quantity": 2,
       "mesure": "pc"
     },
     {
-      "name": "persil",
-      "quantity": 3,
-      "mesure": "brin"
+      "name": "laitue iceberg",
+      "quantity": 1,
+      "mesure": "pc"
+    },
+    {
+      "name": "endive blanche",
+      "quantity": 1,
+      "mesure": "pc"
     },
     {
       "name": "concombre",
@@ -25,22 +25,22 @@
       "mesure": "pc"
     },
     {
-      "name": "huile de tournesol",
-      "quantity": 3,
-      "mesure": "cs"
+      "name": "oignon",
+      "quantity": 0.5,
+      "mesure": "pc"
     },
     {
-      "name": "vinaigre de vin rouge parfumé à La noix",
+      "name": "vinaigre de framboise",
       "quantity": 1,
       "mesure": "cs"
-    },
-    {
-      "name": "moutarde",
-      "quantity": 1,
-      "mesure": "c"
     },
     {
       "name": "sel",
+      "quantity": 1,
+      "mesure": "g"
+    },
+    {
+      "name": "poivre",
       "quantity": 1,
       "mesure": "g"
     }
@@ -53,8 +53,8 @@
   "step": [
     {
       "title": "Tout couper bien sur",
-      "text": "Détailler les légumes en cube de taille moyenne, ciseler le persil",
-      "duration": 500
+      "text": "Détailler les légumes en cube de taille moyenne",
+      "duration": 600
     }
   ],
   "child": [

@@ -28,8 +28,7 @@ class HasTag(Resource):
         with mdb.util.open() as handle:
             for doc in mdb.redux.has_tag(handle[collection], unsplit(tag_list), key=key).find():
                 doc.update(mdb.util.find_one(handle[collection], {'_id': doc['_id']}))
-                response.append(
-                    digestify(mdb.common.astrid(doc)))
+                response.append(digestify(mdb.common.astrid(doc)))
         return flask.Response(response=json_util.dumps(response),
                               status=200,
                               mimetype="application/json")

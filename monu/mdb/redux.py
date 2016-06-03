@@ -55,6 +55,7 @@ def has_tag(collection, tag_list, key='_id'):
 
 
 def has_ingredient(collection, ingredient_list, key='_id'):
+    name = 'result-has_ingredient-%s' % ','.join(ingredient_list)
     ingredient_list = u','.join([u'"%s"' % t.encode('ascii', errors='ignore') for t in ingredient_list])
     tl = u'var tl=[%s];' % ingredient_list
     m = Code(u'function () {'
@@ -71,4 +72,4 @@ def has_ingredient(collection, ingredient_list, key='_id'):
              u'   });'
              u'}')
 
-    return collection.map_reduce(m, CODE['sum'], 'result-has_ingredient-%s' % ingredient_list)
+    return collection.map_reduce(m, CODE['sum'], name)
