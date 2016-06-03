@@ -1,10 +1,10 @@
 <div class="">
   <ul style="list-style: lower-greek">
     <li ng-repeat="doc in tag.data | orderBy: 'name'" class="row">
-      <a class="col-sm-6" style="text-transform: capitalize" ng-href="#/tag/view/_id/{{doc._id}}">
+      <a class="col-md-3" style="text-transform: capitalize" ng-href="#/tag/view/_id/{{doc._id}}">
         {{doc.name}}
       </a>
-      <div class="col-sm-6 panel panel-warning">
+      <div class="col-md-9 panel panel-warning">
         <div class="panel-heading">
           Relatif
         </div>

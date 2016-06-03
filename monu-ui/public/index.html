@@ -34,18 +34,30 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="#/"><img class="thumbnail" style="width: 64px" src="images/logo.png"></a>
+        <a class="navbar-brand" href="#/"><img class="thumbnail" style="width: 64px; clear: left" src="images/logo.png"></a>
       </div>
 
       <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
         <ul ng-controller="MainCtrl as main" class="nav navbar-nav">
           <!--<li ng-class="{active: main.$route.current.controllerAs == 'main' }"><a href="#/">Acceuil</a></li>-->
-          <li ng-class="{active: main.$route.current.controllerAs == 'recipe'}"><a ng-href="#/recipe/view">Recette</a>
+          <li ng-class="{active: main.$route.current.controllerAs == 'recipe'}">
+            <a ng-href="#/recipe/view">Recette</a>
           </li>
           <li ng-class="{active: main.$route.current.controllerAs == 'ingredient'}"><a ng-href="#/ingredient/view">Ingrédient</a>
           </li>
           <li ng-class="{active: main.$route.current.controllerAs == 'tag'}"><a ng-href="#/tag/view">Etiquette</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul style="display: inline-flex;list-style: none; font-size: x-small" class="">
+          <li style="display: inline"><a class="badge" href="#/tag/view/name/entrée">entrée</a></li>
+          <li style="display: inline"><a class="badge" href="#/tag/view/name/plat">plat</a></li>
+          <li style="display: inline"><a class="badge" href="#/tag/view/name/dessert">dessert</a></li>
+          <li style="display: inline"><a class="badge" href="#/tag/view/name/légume">légume</a></li>
+          <li style="display: inline"><a class="badge" href="#/tag/view/name/viande">viande</a></li>
+          <li style="display: inline"><a class="badge" href="#/tag/view/name/poisson">poisson</a></li>
+          <li style="display: inline"><a class="badge" href="#/tag/view/name/fruit">fruit</a></li>
         </ul>
       </div>
     </div>

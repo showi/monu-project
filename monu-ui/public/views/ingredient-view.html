@@ -1,17 +1,17 @@
-<div class="row">
+<div>
   <ul style="list-style: lower-greek">
-    <li ng-repeat="doc in ingredient.data | orderBy: 'name'" class="">
-      <div class="col-sm-4">
+    <li ng-repeat="doc in ingredient.data | orderBy: 'name'" class="row">
+      <div class="col-md-3">
         <a style="text-transform: capitalize" ng-href="#/ingredient/view/_id/{{doc._id}}">
-          <span>{{doc.name}}</span>
+          <span style="font-weight: bold">{{doc.name}}</span>
         </a>
         <ul style="display: inline-block; text-decoration: none;" class="pull-right">
           <li class="" ng-repeat="tag in doc.tag track by $index" style="display: inline; text-align: right">
-            <a style="font-size: xx-small" class="label label-pill label-info" ng-href="#/tag/view/_id/{{tag._id}}">{{tag.name}}</a>
+            <a style="font-size: xx-small" class="label label-info" ng-href="#/tag/view/_id/{{tag._id}}">{{tag.name}}</a>
           </li>
         </ul>
       </div>
-      <div class="col-sm-8 panel panel-warning">
+      <div class="col-md-9 panel panel-warning">
           <div class="panel-heading">
             Relatif
           </div>
