@@ -3,11 +3,12 @@
   "name": "comté",
   "tag": [
     "fromage",
-    "laitier",
-    "franche-comté"
+    "produit laitier"
   ],
   "lang": [
     "fr",
     "fr"
-  ]
+  ],
+  "label": ["AOC", "AOP"],
+  "origin": ["fr:franche-comté"]
 }

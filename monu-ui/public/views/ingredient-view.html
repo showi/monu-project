@@ -13,15 +13,16 @@
       </div>
       <div class="col-sm-4">
         <ul style="list-style: cjk-ideographic">
-          Relatif
-          <li class="" style="display: block; text-decoration: none;" ng-repeat="related in ingredient.related">
+          Relatif aux recettes
+          <li class="" style="display: block; text-decoration: none;" ng-repeat="related in ingredient.related.recipe">
             <a ng-href="#/recipe/view/_id/{{related._id}}">
               {{related.name}}
             </a>
           </li>
         </ul>
         <ul style="list-style: hiragana">
-          <li class="" style="display: block; text-decoration: none;" ng-repeat="related in ingredient.related_tag">
+          Relatif aux ingrédients
+          <li class="" style="display: block; text-decoration: none;" ng-repeat="related in ingredient.related.tag">
               <a ng-href="#/recipe/view/_id/{{related._id}}">
                 {{related.name}}
               </a>

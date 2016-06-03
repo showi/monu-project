@@ -14,8 +14,10 @@ angular.module('monoApp')
       var Ctl = this;
       Ctl.data = [];
       Ctl.TagService = Tag;
-      Ctl.related = [];
-      Ctl.related_tag = [];
+      Ctl.related = {
+        rag: [],
+        recipe: []
+      };
       Ctl.get = function (url) {
         Ingredient.get(url).then(function (response) {
             if (response.status !== 200) {
@@ -28,7 +30,7 @@ angular.module('monoApp')
                 tag_list += c.name + ',';
               }
               HasTag.get('ingredient', '_id', tag_list).then(function (response) {
-                angular.copy(response.data, Ctl.related_tag);
+                angular.copy(response.data, Ctl.related.tag);
               });
             }
             if (Ctl.data.length == 1) {
@@ -36,7 +38,7 @@ angular.module('monoApp')
                 if (!Util.isEmpty(doc._id)) {
                   HasIngredient.get('recipe', '_id', doc._id).then(function (response) {
                     for (var i = 0, tag; i < response.data.length, tag = response.data[i]; i++) {
-                      Ctl.related.push(tag);
+                      Ctl.related.recipe.push(tag);
                     }
                   });
                 }

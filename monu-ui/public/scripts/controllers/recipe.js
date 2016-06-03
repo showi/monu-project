@@ -24,6 +24,10 @@ angular.module('monoApp')
             console.error('Cannot get recipe: %s (%s)', response.status_text, response.config.url);
             return false;
           }
+          if (response.data === undefined || response.data.length <= 0) {
+            console.error('Empty recipe response');
+            return false
+          }
           //angular.copy(Recipe.restructure(response.data), Ctl.data);
           angular.copy(response.data, Ctl.data);
           if (Ctl.data[0].ingredient !== undefined) {

@@ -1,0 +1,64 @@
+{
+  "name": "chou-fleur au curry",
+  "description": "Recette pour jour de flemme",
+  "type": "recipe",
+  "lang": [
+    "fr",
+    "fr"
+  ],
+  "tag": [
+    "légume",
+    "accompagnement",
+    "four"
+  ],
+  "serving": 4,
+  "oven": {
+    "temperature": 180,
+    "mesure": "celius"
+  },
+  "ingredient": [
+    {
+      "name": "chou-fleur",
+      "quantity": 1,
+      "mesure": "1"
+    },
+    {
+      "name": "sel",
+      "quantity": 0.5,
+      "mesure": "g"
+    },
+    {
+      "name": "poivre",
+      "quantity": 0.5,
+      "mesure": "g"
+    },
+    {
+      "name": "curry en poudre",
+      "quantity": 2.5,
+      "mesure": "g"
+    },
+    {
+      "name": "crème fraîche",
+      "quantity": 10,
+      "mesure": "cl"
+    }
+  ],
+  "step": [
+    {
+      "title": "Faire cuire le chou-fleur",
+      "text": "Il faut pouvoir l'écraser au presse purée, la consistance est celon le gout, de ferme à mou",
+      "duration": 1800,
+      "ref": {"ref": "technic", "name": "la cuisson du chou-fleur"}
+    },
+    {
+      "title": "Ecrasement",
+      "text": "Ecraser le chou-fleur, remplir un plat à gratin, ajouter la crème fraiche et le curry, mélanger. Aplannisser",
+      "duration": 120
+    },
+    {
+      "title": "Gratinons",
+      "text": "Passer au four, thermostat 6 (180°C), pour 25-30mn",
+      "duration": 900
+    }
+  ]
+}

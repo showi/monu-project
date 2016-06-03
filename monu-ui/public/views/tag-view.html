@@ -1,14 +1,23 @@
-<div class="row">
+<div class="">
   <ul style="list-style: lower-greek">
-    <li ng-repeat="doc in tag.data | orderBy: 'name'">
-      <a class="" style="text-transform: capitalize"
-         ng-href="#/tag/view/_id/{{doc._id}}"><span>{{doc.name}}</span>
+    <li ng-repeat="doc in tag.data | orderBy: 'name'" class="row">
+      <a class="col-sm-6" style="text-transform: capitalize" ng-href="#/tag/view/_id/{{doc._id}}">
+        {{doc.name}}
       </a>
-      <ul>
-        <li class="" style="display: block; text-decoration: none;" ng-repeat="related in tag.related">
-          <span class="col-md-10"><a ng-href="#/recipe/view/_id/{{related._id}}">{{related.name}}</a></span>
-        </li>
-      </ul>
+      <span class="col-sm-6">
+        <ul style="list-style: armenian">
+          <li style="list-style: none">Relatif aux recettes</li>
+          <li class="" style="" ng-repeat="related in tag.related.recipe">
+            <span class=""><a ng-href="#/recipe/view/_id/{{related._id}}">{{related.name}}</a></span>
+          </li>
+        </ul>
+        <ul style="list-style: armenian">
+          <li style="list-style: none">Relatif aux ingrédients</li>
+          <li class="" style="" ng-repeat="related in tag.related.tag">
+            <span class=""><a ng-href="#/ingredient/view/_id/{{related._id}}">{{related.name}}</a></span>
+          </li>
+        </ul>
+      </span>
     </li>
   </ul>
 </div>

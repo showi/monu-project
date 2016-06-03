@@ -1,9 +1,8 @@
 {
   "type": "ingredient",
-  "name": "emmental",
+  "name": "chou-fleur",
   "tag": [
-    "fromage",
-    "produit laitier"
+    "légume"
   ],
   "lang": [
     "fr",

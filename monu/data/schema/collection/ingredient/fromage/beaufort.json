@@ -3,9 +3,10 @@
   "name": "beaufort",
   "tag": [
     "fromage",
-    "laitier",
-    "savoie"
+    "produit laitier"
   ],
+  "label": ["AOC", "AOP"],
+  "origin": ["fr:savoie"],
   "lang": [
     "fr",
     "fr"
